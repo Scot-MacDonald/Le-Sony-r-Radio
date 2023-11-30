@@ -54,6 +54,7 @@ input.form {
   border: 1px solid #4c4c4c;
   padding: 5px;
   font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 .description.form {
   width: 100%;
