@@ -1,0 +1,82 @@
+.container {
+  padding-left: 60px;
+}
+
+.formContainer {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  max-width: none;
+  width: 500px;
+  padding: 32px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 500px;
+  gap: 5px;
+  width: 100%;
+}
+
+input.form {
+  width: 100%;
+  border-bottom: 1px solid #4c4c4c;
+  background-color: black;
+  /* background: transparent url("/assets/search.svg") no-repeat 13px; */
+}
+
+.form {
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  margin-left: auto;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  padding-top: 15px;
+}
+
+.form input[type="text"]:focus {
+  outline: none;
+}
+
+.description {
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 18px;
+  border: 1px solid #4c4c4c;
+  padding: 5px;
+  font-size: 16px;
+}
+.description.form {
+  width: 100%;
+  border-bottom: 1px solid white;
+  background-color: black;
+}
+
+/* background: transparent url("/assets/search.svg") no-repeat 13px; */
+
+.button {
+  background: #4c4c4c;
+  border: none;
+
+  padding: 20px;
+}
+
+.fieldset {
+  border: 1px solid #4c4c4c;
+  padding: 40px;
+  width: 500px;
+  max-width: 500px;
+}
+
+.legend {
+  padding: 0 2px;
+}
