@@ -1,7 +1,6 @@
-// Explore/index.js
-
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router"; // Import the useRouter hook
 import useSWR, { mutate } from "swr";
 import MixList from "@/components/MixList";
 import styles from "@/styles/explore.module.css";
@@ -10,7 +9,7 @@ import { useTagStore } from "@/store/store";
 export default function Explore() {
   const [selectedItems, setSelectedItems] = useState([]);
   const { data: allMixes, error } = useSWR("/api/mixes");
-  const { mutate } = useSWR();
+  const router = useRouter(); // Initialize the useRouter hook
 
   // Add any necessary logic inside the useEffect hook
   useEffect(() => {
@@ -41,6 +40,19 @@ export default function Explore() {
     new Set(allMixes.reduce((acc, mix) => [...acc, ...(mix.tags || [])], []))
   );
 
+  // Function to update the URL when tags change
+  const updateURL = (tags) => {
+    const queryString = tags.length > 0 ? `?tags=${tags.join(",")}` : "";
+    router.push(
+      {
+        pathname: "/explore",
+        query: { tags: tags.join(",") },
+      },
+      undefined,
+      { shallow: true }
+    );
+  };
+
   return (
     <div>
       <h2 className={styles.header}>EXPLORE</h2>
@@ -51,10 +63,12 @@ export default function Explore() {
             <button
               className={styles.xBt}
               onClick={() => {
-                setSelectedItems((prevItems) =>
-                  prevItems.filter((prevItem) => prevItem !== item)
+                const updatedItems = selectedItems.filter(
+                  (prevItem) => prevItem !== item
                 );
+                setSelectedItems(updatedItems);
                 mutate("/api/mixes"); // Trigger re-fetch when tags change
+                updateURL(updatedItems); // Update the URL
               }}
             >
               x
@@ -71,8 +85,10 @@ export default function Explore() {
               className={styles.button}
               onClick={() => {
                 if (!selectedItems.includes(tag)) {
-                  setSelectedItems((prevItems) => [...prevItems, tag]);
+                  const updatedItems = [...selectedItems, tag];
+                  setSelectedItems(updatedItems);
                   mutate("/api/mixes"); // Trigger re-fetch when tags change
+                  updateURL(updatedItems); // Update the URL
                 }
               }}
             >

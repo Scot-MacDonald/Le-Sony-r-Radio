@@ -6,15 +6,17 @@ export default async function handler(request, response) {
   await dbConnect();
 
   if (request.method === "GET") {
-    // Extract tags from query parameters
     const { tags } = request.query;
+    console.log("Received tags:", tags);
 
-    // Build a query object based on tags
     const query = tags
       ? { tags: { $in: Array.isArray(tags) ? tags : [tags] } }
       : {};
+    console.log("Constructed query:", query);
 
     const mixes = await Mix.find(query);
+    console.log("Resulting mixes:", mixes);
+
     return response.status(200).json(mixes);
   }
 

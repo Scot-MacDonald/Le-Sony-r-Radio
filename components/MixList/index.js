@@ -77,7 +77,9 @@ export default function MixList({ mixes }) {
                 .flatMap((tagItem) => tagItem.split(","))
                 .map((tag, index) => (
                   <span className={styles.mixTag} key={index}>
-                    {tag.trim()}
+                    <Link href={`/explore?tags=${tag.trim()}`}>
+                      {tag.trim()}
+                    </Link>
                   </span>
                 ))}
             </div>

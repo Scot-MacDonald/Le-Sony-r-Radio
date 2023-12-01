@@ -36,5 +36,9 @@ a{padding-bottom:100px;}
     position: fixed;
     width: 100%;
   }
+
+  .g-background-default {
+    background-color: black;
+  }
   
 `;
