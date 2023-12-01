@@ -16,7 +16,7 @@ export default function LoginForm() {
     return (
       <div>
         <h1>you are not signed in</h1>
-        <button onClick={() => signIn()}>Sign in</button>
+        <button onClick={() => signIn("google")}>Sign in</button>
       </div>
     );
   }

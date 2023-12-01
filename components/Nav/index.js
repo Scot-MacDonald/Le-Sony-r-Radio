@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 import styles from "@/styles/nav.module.css";
+
 export default function Nav() {
+  const { data: session } = useSession();
+
   return (
     <>
       <ul className={styles.nav}>
@@ -16,17 +20,19 @@ export default function Nav() {
         <li>
           <Link href="/mixes">EVENTS</Link>
         </li>
+        {session ? (
+          <li>
+            <Link href="/addMix">ADD MIX</Link>
+          </li>
+        ) : null}
         <li>
           <Link href="/login">LOGIN</Link>
-        </li>
-        <li>
-          <Link href="/addMix">ADD MIX</Link>
         </li>
         <input
           className={styles.search}
           type="search"
           placeholder="Search..."
-        ></input>
+        />
       </ul>
     </>
   );

@@ -1,9 +1,13 @@
-/* .widget {
-  position: inherit!;
+.widget {
+  position: inherit !important;
   border: 1px solid #666;
-  background: black!;
+  background: black !important;
 }
 
 .g-background-default {
   background-color: black;
-} */
+}
+
+.g-background-default {
+  background-color: black !important;
+}
