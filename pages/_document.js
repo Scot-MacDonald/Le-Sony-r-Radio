@@ -26,6 +26,10 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
+        <script
+          src="https://w.soundcloud.com/player/api.js"
+          type="text/javascript"
+        />
         <Head />
         <body>
           <Main />
