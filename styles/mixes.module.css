@@ -119,6 +119,17 @@
 
 /* Additional styles */
 
+.imageContainer img.active,
+.imageContainer:hover img {
+  filter: brightness(30%); /* Adjust the brightness to your preference */
+}
+
+.playButton.active,
+.imageContainer:hover .playButton {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .imageContainer {
   position: relative;
   overflow: hidden;

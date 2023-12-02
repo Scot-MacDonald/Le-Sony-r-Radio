@@ -9,16 +9,16 @@ const fetcher = (url) => fetch(url).then((response) => response.json());
 export default function App({ Component, pageProps, session }) {
   return (
     <>
-      <SessionProvider session={session}>
-        <SelectedTrackProvider>
+      <SelectedTrackProvider>
+        <SessionProvider session={session}>
           <GlobalStyle />
           <RootLayout>
             <SWRConfig value={{ fetcher }}>
               <Component {...pageProps} />
             </SWRConfig>
           </RootLayout>
-        </SelectedTrackProvider>
-      </SessionProvider>
+        </SessionProvider>
+      </SelectedTrackProvider>
     </>
   );
 }

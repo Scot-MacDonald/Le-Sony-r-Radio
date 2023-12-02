@@ -1,3 +1,9 @@
+.footer {
+  width: 39%;
+  height: 100px;
+  margin-left: 10px;
+}
+
 .widget {
   position: inherit !important;
   border: 1px solid #666;
@@ -5,9 +11,6 @@
 }
 
 .g-background-default {
-  background-color: black;
-}
-
-.g-background-default {
   background-color: black !important;
+  background: black !important;
 }
