@@ -1,9 +1,35 @@
 .mixContainer {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
+}
+
+.profileImage {
+  margin-top: 67px;
+  height: calc(100% - 67px);
+  padding-bottom: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.mixProfile {
+  margin-top: 0;
+  top: 50%;
+  position: absolute;
+}
+
+.tracklist {
+  background-color: black;
+  width: 40%;
+  padding: 20px;
+}
+.bio {
+  width: 40%;
+  background-color: white;
+  color: black;
+  padding: 20px;
 }
 
 .tags {
@@ -18,4 +44,8 @@
   -ms-transition: background-color 0.1s linear;
   -o-transition: background-color 0.1s linear;
   transition: background-color 0.1s linear;
+}
+
+.bt {
+  color: black;
 }

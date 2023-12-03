@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   min-height: 55px;
+  margin: 5px 0 20px 0;
 }
 
 .button {
@@ -19,7 +20,7 @@
   flex-wrap: wrap;
   background-color: #121212;
   padding: 10px;
-  margin-bottom: 20px;
+  margin: 5px 0 20px 0;
 }
 
 .header {

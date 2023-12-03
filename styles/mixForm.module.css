@@ -76,6 +76,7 @@ input.form {
   padding: 40px;
   width: 500px;
   max-width: 500px;
+  background: black;
 }
 
 .legend {

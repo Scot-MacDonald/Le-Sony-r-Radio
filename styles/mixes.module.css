@@ -178,7 +178,7 @@
   color: white; /* or any other styling for a link */
   /* text-decoration: underline; */
   cursor: pointer;
-  padding: 0px 5px;
+  padding: 0px 5px 10px 5px;
 }
 
 .mixHeader {
