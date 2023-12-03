@@ -52,6 +52,7 @@ export default function Explore() {
       { shallow: true }
     );
   };
+  const sortedAllTags = allTags.sort();
 
   return (
     <div>
@@ -79,7 +80,7 @@ export default function Explore() {
 
       <h2>GENRES</h2>
       <ul className={styles.select}>
-        {allTags.map((tag) => (
+        {sortedAllTags.map((tag) => (
           <li className={styles.tags} key={tag}>
             <button
               className={styles.button}
@@ -87,8 +88,8 @@ export default function Explore() {
                 if (!selectedItems.includes(tag)) {
                   const updatedItems = [...selectedItems, tag];
                   setSelectedItems(updatedItems);
-                  mutate("/api/mixes"); // Trigger re-fetch when tags change
-                  updateURL(updatedItems); // Update the URL
+                  mutate("/api/mixes");
+                  updateURL(updatedItems);
                 }
               }}
             >

@@ -18,7 +18,7 @@ export default function Nav() {
           <Link href="/about">ABOUT</Link>
         </li>
         <li>
-          <Link href="/mixes">EVENTS</Link>
+          <Link href="/events">EVENTS</Link>
         </li>
         {session ? (
           <li>

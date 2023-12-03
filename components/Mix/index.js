@@ -47,41 +47,57 @@ export default function Mix() {
 
   return (
     <>
-      <small>ID: {slug}</small>
-      <h1>{data.title}</h1>
-      <h1>{data.description}</h1>
-      <h1>{data.country}</h1>
-      <h1>{data.tags}</h1>
-      <Image
-        className={styles.mixContainer}
-        src={data.imageURL}
-        alt={`Image for ${data.title}`}
-        width={312}
-        height={205}
-      />
+      <section className={styles.mixContainer}>
+        <Image
+          className={styles.profileImage}
+          src={data.imageURL}
+          alt={`Image for ${data.title}`}
+          width={312}
+          height={205}
+        />
 
-      <div>
-        <button
-          onClick={() => {
-            setIsEditMode(!isEditMode);
-          }}
-        >
-          <span role="img" aria-label="A pencil">
-            ✏️
-          </span>
-        </button>
-        <button onClick={handleDelete} disabled={isEditMode}>
-          <span role="img" aria-label="A cross indicating deletion">
-            ❌
-          </span>
-        </button>
-      </div>
+        <section className={styles.mixProfile}>
+          <div className={styles.bio}>
+            <h1>{data.title}</h1>
+            <p>{data.country}</p>
+            <p>{data.date}</p>
+            <p>{data.description}</p>
+            <p>{data.tags}</p>
+          </div>
+          <div className={styles.tracklist}>
+            <ul>
+              <li>Track 1</li>
+              <li>Track 2</li>
+              <li>Track 2</li>
+              <li>Track 2</li>
+            </ul>
+            <div>
+              <button
+                onClick={() => {
+                  setIsEditMode(!isEditMode);
+                }}
+              >
+                <span role="img" aria-label="A pencil">
+                  Edit Mix
+                </span>
+              </button>
+              <button onClick={handleDelete} disabled={isEditMode}>
+                <span role="img" aria-label="A cross indicating deletion">
+                  Delete Mix
+                </span>
+              </button>
+            </div>
 
-      {isEditMode && (
-        <MixForm onSubmit={handleEdit} value={data} isEditMode={true} />
-      )}
+            {isEditMode && (
+              <MixForm onSubmit={handleEdit} value={data} isEditMode={true} />
+            )}
 
-      <Link href="/">Back to all</Link>
+            <Link href="/" className={styles.bt}>
+              Back to all
+            </Link>
+          </div>
+        </section>
+      </section>
     </>
   );
 }

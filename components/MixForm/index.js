@@ -39,10 +39,7 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
   }, [value, isEditMode, initialTags]);
 
   const handleTagsChange = (e) => {
-    const newTags = e.target.value
-      .split(",")
-      .map((tag) => tag.trim())
-      .filter((tag) => tag !== ""); // Remove empty tags
+    const newTags = e.target.value.split(",").map((tag) => tag.trim());
 
     // Remove duplicates by converting the array to a Set and back to an array
     const uniqueTags = [...new Set(newTags)];
