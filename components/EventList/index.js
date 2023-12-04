@@ -30,7 +30,7 @@ export default function EventList({ events }) {
             </div>
 
             <div className={styles.eventHeader}>
-              <Link href={`/${event.slug}`}>
+              <Link href={`/events/${event.slug}`}>
                 <div className={styles.eventTitle}>{event.title}</div>
               </Link>
             </div>

@@ -18,6 +18,8 @@
   margin-top: 0;
   top: 50%;
   position: absolute;
+  width: 40%;
+  min-width: 40%;
 }
 .bio__title {
   font-size: 28px;
@@ -43,11 +45,10 @@
 
 .tracklist {
   background-color: black;
-  width: 40%;
+
   padding: 20px;
 }
 .bio {
-  width: 40%;
   background-color: white;
   color: black;
   padding: 20px;

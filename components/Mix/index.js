@@ -101,9 +101,7 @@ export default function Mix() {
               )}
             </div>
             <h1 className={styles.bio__title}>{data.title}</h1>
-            <h2 className={styles.bio__city}>
-              {data.city}, {data.date.substring(0, 10)}
-            </h2>
+            <h2 className={styles.bio__city}>{data.city}</h2>
             <p>{data.description}</p>
             <p>{data.tags}</p>
           </div>

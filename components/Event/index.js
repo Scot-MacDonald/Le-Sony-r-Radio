@@ -2,7 +2,7 @@
 import useSWR from "swr";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import EventForm from "@/components/EventList";
+import EventForm from "@/components/EventForm";
 import Link from "next/link";
 import styles from "@/styles/mix.module.css";
 import Image from "next/image";
@@ -48,40 +48,45 @@ export default function Event() {
 
   return (
     <>
-      <Image
-        src={data.imageURL}
-        alt={`Image for ${data.title}`}
-        width={312}
-        height={205}
-      />
+      <section className={styles.mixContainer}>
+        <Image
+          className={styles.profileImage}
+          src={data.imageURL}
+          alt={`Image for ${data.title}`}
+          width={312}
+          height={205}
+        />
+        <section className={styles.mixProfile}>
+          <div className={styles.bio}></div>
+          <h1>{data.title}</h1>
 
-      <h1>{data.title}</h1>
+          <p>{data.description}</p>
 
-      <p>{data.description}</p>
+          <button
+            onClick={() => {
+              setIsEditMode(!isEditMode);
+            }}
+          >
+            <span role="img" aria-label="A pencil">
+              Edit Mix
+            </span>
+          </button>
+          <button onClick={handleDelete} disabled={isEditMode}>
+            <span role="img" aria-label="A cross indicating deletion">
+              Delete Mix
+            </span>
+          </button>
 
-      <button
-        onClick={() => {
-          setIsEditMode(!isEditMode);
-        }}
-      >
-        <span role="img" aria-label="A pencil">
-          Edit Mix
-        </span>
-      </button>
-      <button onClick={handleDelete} disabled={isEditMode}>
-        <span role="img" aria-label="A cross indicating deletion">
-          Delete Mix
-        </span>
-      </button>
-
-      {isEditMode && (
-        <EventForm onSubmit={handleEdit} value={data} isEditMode={true} />
-      )}
-      <div className={styles.foot}>
-        <Link href="/events" className={styles.bt}>
-          Back to all
-        </Link>
-      </div>
+          {isEditMode && (
+            <EventForm onSubmit={handleEdit} value={data} isEditMode={true} />
+          )}
+          <div className={styles.foot}>
+            <Link href="/events" className={styles.bt}>
+              Back to all
+            </Link>
+          </div>
+        </section>
+      </section>
     </>
   );
 }
