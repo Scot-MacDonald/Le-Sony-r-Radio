@@ -17,7 +17,7 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
     imageURL: "",
     url: "",
     title: "",
-    country: "",
+    city: "",
     description: "",
     date: "",
   });
@@ -29,7 +29,7 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
         imageURL: value.imageURL || "",
         url: value.url || "",
         title: value.title || "",
-        country: value.country || "",
+        city: value.city || "",
         description: value.description || "",
         date: formatDate(value.date) || "",
       }));
@@ -115,15 +115,15 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
               onChange={(e) => handleInputChange("title", e.target.value)}
             />
 
-            <label htmlFor="country"></label>
+            <label htmlFor="city"></label>
             <input
               className={styles.form}
               type="text"
-              id="country"
-              name="country"
-              placeholder="COUNTRY:"
-              value={formValues.country}
-              onChange={(e) => handleInputChange("country", e.target.value)}
+              id="city"
+              name="city"
+              placeholder="CITY:"
+              value={formValues.city}
+              onChange={(e) => handleInputChange("city", e.target.value)}
             />
 
             <label htmlFor="description"></label>

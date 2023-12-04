@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
-import LiveHeader from "../LiveHeader";
+import styles from "@/styles";
 import Footer from "../Footer";
 
 const RootLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <LiveHeader />
-      <main>{children}</main>
+
+      <main className={styles.main}>{children}</main>
       <Footer />
     </>
   );

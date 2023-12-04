@@ -6,7 +6,7 @@ const mixSchema = new Schema({
   imageURL: { type: String, required: true },
   url: { type: String, required: true },
   title: { type: String, required: true },
-  country: { type: String, required: true },
+  city: { type: String, required: true },
   date: { type: Date, required: true },
   tags: { type: [String], default: [] },
   description: { type: String, required: true },

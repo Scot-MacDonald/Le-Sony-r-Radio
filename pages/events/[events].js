@@ -1,6 +1,6 @@
 // pages/tags/[tag].js
 import useSWR from "swr";
-import MixList from "@/components/MixList";
+import EventList from "@/components/EventList";
 
 // tags/[tag].js
 import { useRouter } from "next/router";
@@ -11,7 +11,7 @@ export default function TagPage() {
 
   console.log("Tag:", tag);
 
-  const { data, error } = useSWR(`/api/mixes?tag=${tag}`);
+  const { data, error } = useSWR(`/api/events?tag=${tag}`);
 
   if (error) {
     return <div>Error loading mixes</div>;
@@ -21,5 +21,5 @@ export default function TagPage() {
     return <div>Loading...</div>;
   }
 
-  return <MixList mixes={data} />;
+  return <EventList mixes={data} />;
 }
