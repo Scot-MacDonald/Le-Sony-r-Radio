@@ -1,6 +1,6 @@
 // pages/api/mixes/index.js
-import dbConnect from "../../../db/connect";
-import Mix from "../../../db/models/Mix";
+import dbConnect from "@/db/connect";
+import Mix from "@/db/models/Mix";
 
 export default async function handler(request, response) {
   await dbConnect();

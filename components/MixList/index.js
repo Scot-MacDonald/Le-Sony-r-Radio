@@ -106,7 +106,7 @@ export default function MixList({ mixes }) {
               <Link href={`/${mix.slug}`}>
                 <div className={styles.mixDate}>
                   <div>{new Date(mix.date).toLocaleDateString()}</div>
-                  <div>{mix.country}</div>
+                  <div>{mix.city}</div>
                 </div>
                 <div className={styles.mixTitle}>{mix.title}</div>
               </Link>

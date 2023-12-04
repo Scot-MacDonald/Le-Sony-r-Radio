@@ -18,15 +18,37 @@
   margin-top: 0;
   top: 50%;
   position: absolute;
+  width: 40%;
+  min-width: 40%;
+}
+.bio__title {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.bio__city {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  padding: 10px 0 15px 0;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.bio__date {
+  padding: 10px 0;
+
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
 }
 
 .tracklist {
   background-color: black;
-  width: 40%;
+
   padding: 20px;
 }
 .bio {
-  width: 40%;
   background-color: white;
   color: black;
   padding: 20px;
@@ -48,4 +70,20 @@
 
 .bt {
   color: black;
+}
+
+.svg {
+  fill: black;
+}
+.arrow {
+  background: white;
+  width: 140px;
+}
+
+.playButton {
+  max-width: 30px;
+  height: auto;
+}
+.foot {
+  background-color: white;
 }

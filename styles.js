@@ -30,7 +30,12 @@ a{padding-bottom:100px;}
   ul {
     list-style-type: none;
   }
-  
+  main{
+    margin-top:90px;
+    
+  }
+
+
   footer {
     bottom: 0;
     position: fixed;

@@ -2,7 +2,7 @@
 import styles from "@/styles/mixForm.module.css";
 import React, { useState, useEffect, useMemo } from "react";
 
-export default function MixForm({ value, onSubmit, isEditMode }) {
+export default function EventForm({ value, onSubmit, isEditMode }) {
   const initialTags = useMemo(() => {
     return value && value.tags
       ? Array.isArray(value.tags)
@@ -15,9 +15,9 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
 
   const [formValues, setFormValues] = useState({
     imageURL: "",
-    url: "",
+
     title: "",
-    city: "",
+
     description: "",
     date: "",
   });
@@ -27,9 +27,9 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
       setFormValues((prevFormValues) => ({
         ...prevFormValues,
         imageURL: value.imageURL || "",
-        url: value.url || "",
+
         title: value.title || "",
-        city: value.city || "",
+
         description: value.description || "",
         date: formatDate(value.date) || "",
       }));
@@ -93,17 +93,6 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
               onChange={(e) => handleInputChange("imageURL", e.target.value)}
             />
 
-            <label htmlFor="url"></label>
-            <input
-              className={styles.form}
-              type="text"
-              id="url"
-              name="url"
-              placeholder="SOUNDCLOUD URL:"
-              value={formValues.url}
-              onChange={(e) => handleInputChange("url", e.target.value)}
-            />
-
             <label htmlFor="title"></label>
             <input
               className={styles.form}
@@ -113,17 +102,6 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
               placeholder="TITLE:"
               value={formValues.title}
               onChange={(e) => handleInputChange("title", e.target.value)}
-            />
-
-            <label htmlFor="city"></label>
-            <input
-              className={styles.form}
-              type="text"
-              id="city"
-              name="city"
-              placeholder="CITY:"
-              value={formValues.city}
-              onChange={(e) => handleInputChange("city", e.target.value)}
             />
 
             <label htmlFor="description"></label>
