@@ -1,0 +1,81 @@
+.mixContainer {
+}
+
+.eventImage {
+  margin-top: 67px;
+  height: calc(100% - 67px);
+  padding-bottom: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.eventProfile {
+  margin-top: 0;
+  top: 50%;
+  position: absolute;
+  width: 40%;
+  min-width: 40%;
+}
+.event__title {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.event__city {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  padding: 10px 0 15px 0;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.event__date {
+  padding: 10px 0;
+
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+.tracklist {
+  background-color: black;
+
+  padding: 20px;
+}
+.bio {
+  background-color: white;
+  color: black;
+  padding: 20px;
+}
+
+.tags {
+  font-size: 12px;
+  margin: 2px;
+  padding: 6px 8px;
+  border: 1px solid #4c4c4c;
+  color: #ccc;
+  text-decoration: none;
+  -webkit-transition: background-color 0.1s linear;
+  -moz-transition: background-color 0.1s linear;
+  -ms-transition: background-color 0.1s linear;
+  -o-transition: background-color 0.1s linear;
+  transition: background-color 0.1s linear;
+}
+
+.bt {
+  color: black;
+}
+
+.svg {
+  fill: black;
+}
+
+.foot {
+  background-color: white;
+}

@@ -20,6 +20,7 @@ const nextConfig = {
       "www.zabriskie.de",
       "www.nts.live",
       "www.soundcloud.com",
+      "www.media.gq-magazine.co.uk",
     ],
   },
 };
