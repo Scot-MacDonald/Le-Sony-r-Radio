@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import EventForm from "@/components/EventForm";
 import Link from "next/link";
-import styles from "@/styles/mix.module.css";
+import styles from "@/styles/event.module.css";
 import Image from "next/image";
 import { useSelectedTrack } from "@/context/SelectedTrackContext";
 
@@ -48,42 +48,59 @@ export default function Event() {
 
   return (
     <>
-      <section className={styles.mixContainer}>
+      <section className={styles.eventContainer}>
         <Image
-          className={styles.profileImage}
+          className={styles.eventImage}
           src={data.imageURL}
           alt={`Image for ${data.title}`}
           width={312}
           height={205}
         />
-        <section className={styles.mixProfile}>
-          <div className={styles.bio}></div>
-          <h1>{data.title}</h1>
+        <section className={styles.eventProfile}>
+          <div className={styles.bio}>
+            <h1>{data.title}</h1>
 
-          <p>{data.description}</p>
+            <p>{data.description}</p>
+          </div>
+          <div className={styles.tracklist}>
+            <ul>
+              <li>Track 1</li>
+              <li>Track 2</li>
+              <li>Track 2</li>
+              <li>Track 2</li>
+              <li>Track 1</li>
+              <li>Track 2</li>
+              <li>Track 2</li>
+              <li>Track 2</li>
+              <li>Track 1</li>
+              <li>Track 2</li>
+              <li>Track 2</li>
+              <li>Track 2</li>
+            </ul>
 
-          <button
-            onClick={() => {
-              setIsEditMode(!isEditMode);
-            }}
-          >
-            <span role="img" aria-label="A pencil">
-              Edit Mix
-            </span>
-          </button>
-          <button onClick={handleDelete} disabled={isEditMode}>
-            <span role="img" aria-label="A cross indicating deletion">
-              Delete Mix
-            </span>
-          </button>
+            <button
+              onClick={() => {
+                setIsEditMode(!isEditMode);
+              }}
+            >
+              <span role="img" aria-label="A pencil">
+                Edit Mix
+              </span>
+            </button>
+            <button onClick={handleDelete} disabled={isEditMode}>
+              <span role="img" aria-label="A cross indicating deletion">
+                Delete Mix
+              </span>
+            </button>
 
-          {isEditMode && (
-            <EventForm onSubmit={handleEdit} value={data} isEditMode={true} />
-          )}
-          <div className={styles.foot}>
-            <Link href="/events" className={styles.bt}>
-              Back to all
-            </Link>
+            {isEditMode && (
+              <EventForm onSubmit={handleEdit} value={data} isEditMode={true} />
+            )}
+            <div className={styles.foot}>
+              <Link href="/events" className={styles.bt}>
+                Back to all
+              </Link>
+            </div>
           </div>
         </section>
       </section>
