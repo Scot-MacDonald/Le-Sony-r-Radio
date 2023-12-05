@@ -3,6 +3,7 @@ import useSWR from "swr";
 import MixForm from "../components/MixForm";
 import MixList from "../components/MixList";
 import Slider from "@/components/slider";
+import Demo from "@/components/Demo";
 
 export default function HomePage() {
   const { data: mixesData, error, mutate } = useSWR("/api/mixes");
@@ -27,6 +28,7 @@ export default function HomePage() {
 
   return (
     <>
+      <Demo />
       <Slider />
       <MixList mixes={mixesData} />
     </>

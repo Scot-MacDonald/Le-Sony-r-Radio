@@ -47,3 +47,9 @@
 .name {
   padding: 0.3rem 0.5rem;
 }
+
+.svg {
+  width: 15px !important;
+  justify-content: center;
+  display: flex;
+}
