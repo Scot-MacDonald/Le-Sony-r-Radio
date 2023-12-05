@@ -6,12 +6,24 @@ export default async function handler(request, response) {
   await dbConnect();
 
   if (request.method === "GET") {
-    const { tags } = request.query;
+    const { tags, search } = request.query;
     console.log("Received tags:", tags);
+    console.log("Received search query:", search);
 
-    const query = tags
+    const tagQuery = tags
       ? { tags: { $in: Array.isArray(tags) ? tags : [tags] } }
       : {};
+
+    const searchQuery = search
+      ? {
+          $or: [
+            { title: { $regex: new RegExp(search), $options: "i" } },
+            { description: { $regex: new RegExp(search), $options: "i" } },
+          ],
+        }
+      : {};
+
+    const query = { ...tagQuery, ...searchQuery };
     console.log("Constructed query:", query);
 
     const mixes = await Mix.find(query);

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import styles from "@/styles/nav.module.css";
+import SearchBar from "../SearchBar";
 
 export default function Nav() {
   const { data: session } = useSession();
@@ -28,11 +29,9 @@ export default function Nav() {
         <li>
           <Link href="/login">LOGIN</Link>
         </li>
-        <input
-          className={styles.search}
-          type="search"
-          placeholder="Search..."
-        />
+        <div className={styles.searchBarContainer}>
+          <SearchBar />
+        </div>
       </ul>
     </>
   );

@@ -15,6 +15,10 @@
   text-decoration: none;
 }
 
+.searchBarContainer {
+  margin-left: auto; /* This pushes the SearchBar to the right */
+}
+
 input.search {
   width: 150px;
   border-bottom: 1px solid white;
