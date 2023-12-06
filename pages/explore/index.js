@@ -56,7 +56,7 @@ export default function Explore() {
 
   return (
     <div>
-      <h2 className={styles.header}>EXPLORE</h2>
+      <h1>EXPLORE</h1>
       <ul className={styles.selectionBar}>
         {selectedItems.map((item, index) => (
           <li className={styles.tags} key={index}>

@@ -2,6 +2,7 @@
 import useSWR from "swr";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 import MixForm from "@/components/MixForm/index";
 import Link from "next/link";
 import styles from "@/styles/mix.module.css";
@@ -14,6 +15,7 @@ export default function Mix() {
   const { slug } = router.query;
   const { data, isLoading, mutate } = useSWR(`/api/mixes/${slug}`);
   const { setSelectedTrack, selectedTrack } = useSelectedTrack();
+  const { data: session } = useSession();
 
   async function handleEdit(formData) {
     const response = await fetch(`/api/mixes/${slug}`, {
@@ -122,20 +124,24 @@ export default function Mix() {
               <li>Track 2</li>
             </ul>
             <div>
-              <button
-                onClick={() => {
-                  setIsEditMode(!isEditMode);
-                }}
-              >
-                <span role="img" aria-label="A pencil">
-                  Edit Mix
-                </span>
-              </button>
-              <button onClick={handleDelete} disabled={isEditMode}>
-                <span role="img" aria-label="A cross indicating deletion">
-                  Delete Mix
-                </span>
-              </button>
+              {session && (
+                <div>
+                  <button
+                    onClick={() => {
+                      setIsEditMode(!isEditMode);
+                    }}
+                  >
+                    <span role="img" aria-label="A pencil">
+                      Edit Mix
+                    </span>
+                  </button>
+                  <button onClick={handleDelete} disabled={isEditMode}>
+                    <span role="img" aria-label="A cross indicating deletion">
+                      Delete Mix
+                    </span>
+                  </button>
+                </div>
+              )}
             </div>
 
             {isEditMode && (

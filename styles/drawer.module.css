@@ -28,3 +28,7 @@
   border-left: 1px solid white;
   width: 50%;
 }
+
+.drawerArrow {
+  background-color: black;
+}

@@ -26,6 +26,11 @@ export default function Nav() {
             <Link href="/addMix">ADD MIX</Link>
           </li>
         ) : null}
+        {session ? (
+          <li>
+            <Link href="/addEvent">ADD EVENT</Link>
+          </li>
+        ) : null}
         <li>
           <Link href="/login">LOGIN</Link>
         </li>

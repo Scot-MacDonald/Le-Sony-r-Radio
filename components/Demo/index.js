@@ -39,7 +39,7 @@ export default function TemporaryDrawer() {
       <>
         <div className={styles.liveHeader}>
           <div className={styles.liveChannel}>
-            <div className={styles.liveChannel__header}>channel 1</div>
+            <div className={styles.liveChannel__header}></div>
             <div className={styles.liveChannel__content}>
               <div className={styles.liveChannel__content__image}>
                 <Image
@@ -57,7 +57,7 @@ export default function TemporaryDrawer() {
             <div className={styles.liveChannel__footer}>foot 1</div>
           </div>
           <div className={`${styles.liveChannel} ${styles.channel2}`}>
-            <div className={styles.liveChannel__header}>channel 2</div>
+            <div className={styles.liveChannel__header}></div>
             <div className={styles.liveChannel__content}>
               <div className={styles.liveChannel__content__image}>
                 <Image

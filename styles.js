@@ -34,7 +34,16 @@ export default createGlobalStyle`
     margin-top:90px;
     
   }
-
+ h1{
+  font-size: 28px;
+  line-height: 32px;
+  margin: 10px;
+}
+h2{
+  font-size: 28px;
+  line-height: 32px;
+  margin: 10px;
+}
 
   footer {
     bottom: 0;
@@ -48,13 +57,24 @@ export default createGlobalStyle`
 
   .css-1nvnyqx-MuiPaper-root-MuiDrawer-paper{
     background-color:black!important;
-    margin-top:74px;
+    margin-top:81px;
     z-index:1400!important;
   }
 
   .css-68zbsl {
     width: auto;
-    border: 1px solid white;
-  
+    border: 1px solid white;}
+
+    .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
+      border-left:white solid 1px;
+      border-right:white solid 1px;
+      border-bottom:white solid 1px;
+      border-radius:0;
+      padding:0;
+      min-width:26px;
+    }
+    .css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover{
+      background-color:black;
+    }
   
 `;

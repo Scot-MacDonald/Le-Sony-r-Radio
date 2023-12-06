@@ -7,15 +7,16 @@ export default function LoginForm() {
   const { data: session } = useSession();
   if (session) {
     return (
-      <div>
+      <div className={styles.login}>
         <p>Welcome, {session.user.name}</p>
+        <p>hi</p>
         <button onClick={() => signOut()}>Sign Out</button>
       </div>
     );
   } else {
     return (
-      <div>
-        <h1>you are not signed in</h1>
+      <div className={styles.login}>
+        <p>you are not signed in</p>
         <button onClick={() => signIn("google")}>Sign in</button>
       </div>
     );

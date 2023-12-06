@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import styles from "@/styles/results.module.css";
 
 const Results = () => {
   const router = useRouter();
@@ -49,7 +50,7 @@ const Results = () => {
       {mixes.length > 0 ? (
         <ul>
           {mixes.map((mix) => (
-            <li key={mix._id}>
+            <li className={styles.item} key={mix._id}>
               <Link href={`/${mix.slug}`}>{mix.title}</Link>
             </li>
           ))}

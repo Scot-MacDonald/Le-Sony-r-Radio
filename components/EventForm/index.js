@@ -80,7 +80,7 @@ export default function EventForm({ value, onSubmit, isEditMode }) {
     <main className={styles.container}>
       <div className={styles.formContainer}>
         <fieldset className={styles.fieldset}>
-          <legend className={styles.legend}>ADD MIX</legend>
+          <legend className={styles.legend}>ADD EVENT</legend>
           <form className={styles.form} onSubmit={handleSubmit}>
             <label htmlFor="imageURL"></label>
             <input

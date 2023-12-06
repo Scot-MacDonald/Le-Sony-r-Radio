@@ -15,26 +15,32 @@
   text-decoration: none;
 }
 
+/* styles/nav.module.css */
 .searchBarContainer {
+  display: flex;
+  align-items: center;
   margin-left: auto; /* This pushes the SearchBar to the right */
 }
 
-input.search {
+.search {
+  display: flex;
+  align-items: center;
   width: 150px;
   border-bottom: 1px solid white;
   background-color: black;
-  /* background: transparent url("/assets/search.svg") no-repeat 13px; */
 }
 
-.search {
-  background-color: black;
-  color: white;
+.search input[type="text"] {
+  background: none;
   border: none;
   outline: none;
-  margin-right: 30px;
-  margin-left: auto;
+  color: white;
+  width: 100%;
 }
 
-.search input[type="text"]:focus {
-  outline: none;
+.search button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px; /* Adjust the margin as needed */
 }
