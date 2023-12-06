@@ -1,0 +1,30 @@
+.liveHeader {
+  display: flex;
+  flex-direction: row;
+
+  color: white;
+}
+.liveChannel {
+  width: 50%;
+}
+.liveChannel__header {
+}
+.liveChannel__content {
+  display: flex;
+}
+.liveChannel__content__image {
+  width: 50%;
+  object-fit: cover;
+  width: 100%;
+}
+.liveChannel__content__details {
+  width: 50%;
+}
+.liveChannel__footer {
+  border-top: 1px white solid;
+}
+
+.channel2 {
+  border-left: 1px solid white;
+  width: 50%;
+}

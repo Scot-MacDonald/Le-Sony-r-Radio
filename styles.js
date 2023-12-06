@@ -8,7 +8,7 @@ export default createGlobalStyle`
   *::after {
     box-sizing: border-box;
   }
-a{padding-bottom:100px;}
+
   body {
    background:black;
    color:white;
@@ -45,5 +45,16 @@ a{padding-bottom:100px;}
   .g-background-default {
     background-color: black;
   }
+
+  .css-1nvnyqx-MuiPaper-root-MuiDrawer-paper{
+    background-color:black!important;
+    margin-top:74px;
+    z-index:1400!important;
+  }
+
+  .css-68zbsl {
+    width: auto;
+    border: 1px solid white;
+  
   
 `;

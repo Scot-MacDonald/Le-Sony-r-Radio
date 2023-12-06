@@ -28,7 +28,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Demo />
       <Slider />
       <MixList mixes={mixesData} />
     </>
