@@ -5,7 +5,7 @@ import { useSelectedTrack } from "@/context/SelectedTrackContext";
 import styles from "@/styles/mixes.module.css";
 import Image from "next/image";
 
-export default function MixList({ mixes, onTagClick }) {
+export default function MixList({ mixes, onTagClick, onPlayClick }) {
   const {
     selectedTrack,
     setSelectedTrack,
@@ -43,7 +43,7 @@ export default function MixList({ mixes, onTagClick }) {
                   className={`${styles.playButton} ${
                     selectedTrack === mix.url ? styles.active : ""
                   }`}
-                  onClick={() => handlePlayClick(mix.url)}
+                  onClick={() => onPlayClick(mix.url)}
                   onMouseEnter={() => {
                     document
                       .querySelector(`.${styles.playButton}`)
