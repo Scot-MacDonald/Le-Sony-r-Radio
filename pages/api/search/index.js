@@ -10,24 +10,25 @@ export default async function handler(req, res) {
     // Connect to the MongoDB database
     await dbConnect();
 
-    // Search for matching events and mixes
-    const results = await Promise.all([
-      Event.find({
-        $or: [
-          { title: { $regex: query, $options: "i" } }, // Case-insensitive title search
-          { city: { $regex: query, $options: "i" } }, // Case-insensitive city search
-        ],
-      }),
-      Mix.find({
-        $or: [
-          { title: { $regex: query, $options: "i" } }, // Case-insensitive title search
-          { city: { $regex: query, $options: "i" } }, // Case-insensitive city search
-        ],
-      }),
-    ]);
+    // Search for matching events and mixes based on titles, cities, and tags
+    const eventResults = await Event.find({
+      $or: [
+        { title: { $regex: query, $options: "i" } },
+        { city: { $regex: query, $options: "i" } },
+        { tags: { $in: [query] } }, // Search by tag
+      ],
+    });
+
+    const mixResults = await Mix.find({
+      $or: [
+        { title: { $regex: query, $options: "i" } },
+        { city: { $regex: query, $options: "i" } },
+        { tags: { $in: [query] } }, // Search by tag
+      ],
+    });
 
     // Combine and send the results
-    const combinedResults = [...results[0], ...results[1]];
+    const combinedResults = [...eventResults, ...mixResults];
     res.status(200).json({ results: combinedResults });
   } catch (error) {
     console.error(error);

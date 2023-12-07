@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import styles from "@/styles/nav.module.css";
-import SearchBar from "../SearchBar";
+import NavSearchBar from "@/components/NavSearchBar";
 
 export default function Nav() {
   const { data: session } = useSession();
@@ -35,7 +35,7 @@ export default function Nav() {
           <Link href="/login">LOGIN</Link>
         </li>
         <div className={styles.searchBarContainer}>
-          <SearchBar />
+          <NavSearchBar />
         </div>
       </ul>
     </>
