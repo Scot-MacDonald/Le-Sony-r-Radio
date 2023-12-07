@@ -1,12 +1,13 @@
 // Explore.js
 import { useEffect } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import useSWR, { mutate } from "swr";
 import MixList from "@/components/MixList";
 import styles from "@/styles/explore.module.css";
 import { useTagStore, clearSelectedTags } from "@/store/tagStore";
 
-export default function Explore() {
+const Explore = () => {
   const { selectedTags, setSelectedTags, addSelectedTag, removeSelectedTag } =
     useTagStore();
   const { data: allMixes, error } = useSWR("/api/mixes");
@@ -60,6 +61,17 @@ export default function Explore() {
   };
   const sortedAllTags = allTags.sort();
 
+  const handleFilteredTagClick = (tag) => {
+    if (!selectedTags.includes(tag)) {
+      // Add the clicked tag to the selected tags
+      addSelectedTag(tag);
+      // Trigger re-fetch when tags change
+      mutate("/api/mixes");
+      // Update the URL
+      updateURL([...selectedTags, tag]);
+    }
+  };
+
   return (
     <div>
       <h1>EXPLORE</h1>
@@ -102,8 +114,10 @@ export default function Explore() {
       </ul>
 
       <div className={styles.explore_select}>
-        <MixList mixes={filteredMixes} />
+        <MixList mixes={filteredMixes} onTagClick={handleFilteredTagClick} />
       </div>
     </div>
   );
-}
+};
+
+export default Explore;
