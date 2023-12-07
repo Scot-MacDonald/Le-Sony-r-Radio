@@ -54,7 +54,7 @@ export default function TemporaryDrawer() {
                 Music To Ease Your Disease
               </div>
             </div>
-            <div className={styles.liveChannel__footer}>foot 1</div>
+            <div className={styles.liveChannel__footer}>NEXT ON 1</div>
           </div>
           <div className={`${styles.liveChannel} ${styles.channel2}`}>
             <div className={styles.liveChannel__header}></div>
@@ -100,6 +100,17 @@ export default function TemporaryDrawer() {
           >
             <path d="M14 20l10 10 10-10z" />
             <path d="M0 0h48v48h-48z" fill="none" />
+          </svg>
+        </Button>
+        <Button className={styles.drawerArrow}>
+          <svg
+            height="48"
+            viewBox="0 0 48 48"
+            width="48"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="white"
+          >
+            <circle cx="24" cy="24" r="10" />
           </svg>
         </Button>
       </div>

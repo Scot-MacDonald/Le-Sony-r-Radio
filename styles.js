@@ -72,6 +72,8 @@ h2{
       border-radius:0;
       padding:0;
       min-width:26px;
+      max-width:30px;
+      max-height:30px;
     }
     .css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover{
       background-color:black;

@@ -9,6 +9,15 @@
 }
 .liveChannel__header {
 }
+
+.liveChannel__footer {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 12px 10px;
+  border-right: 1px solid white;
+  display: inline-flex;
+}
+
 .liveChannel__content {
   display: flex;
 }

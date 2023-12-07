@@ -107,6 +107,9 @@
   -o-transition: background-color 0.1s linear;
   transition: background-color 0.1s linear;
 }
+.mixTag:hover {
+  background-color: #4c4c4c;
+}
 
 .mixDate {
   font-size: 12px;
