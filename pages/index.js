@@ -1,14 +1,15 @@
-// HomePage.js
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import MixForm from "../components/MixForm";
 import MixList from "../components/MixList";
 import Slider from "@/components/slider";
 import Demo from "@/components/Demo";
+import { useSelectedTrack } from "@/context/SelectedTrackContext";
 
 export default function HomePage() {
   const { data: mixesData, error, mutate } = useSWR("/api/mixes");
   const router = useRouter();
+  const { selectedTrack, setSelectedTrack } = useSelectedTrack();
 
   async function handleSubmit(formData) {
     const response = await fetch("/api/mixes", {
@@ -32,6 +33,13 @@ export default function HomePage() {
     router.push(`/explore?tags=${tag}`, undefined, { shallow: true });
   };
 
+  const handlePlayClick = (trackUrl) => {
+    const isSameTrack = trackUrl === selectedTrack;
+
+    // If the clicked track is the same as the currently selected track, pause it
+    setSelectedTrack(isSameTrack ? null : trackUrl);
+  };
+
   if (error) return <div>Error loading mixes</div>;
   if (!mixesData || !Array.isArray(mixesData))
     return <div>Loading mixes...</div>;
@@ -39,7 +47,11 @@ export default function HomePage() {
   return (
     <>
       <Slider />
-      <MixList mixes={mixesData} onTagClick={handleTagClick} />
+      <MixList
+        mixes={mixesData}
+        onTagClick={handleTagClick}
+        onPlayClick={handlePlayClick}
+      />
     </>
   );
 }

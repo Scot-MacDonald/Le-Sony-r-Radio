@@ -6,12 +6,14 @@ import useSWR, { mutate } from "swr";
 import MixList from "@/components/MixList";
 import styles from "@/styles/explore.module.css";
 import { useTagStore, clearSelectedTags } from "@/store/tagStore";
+import { useSelectedTrack } from "@/context/SelectedTrackContext";
 
 const Explore = () => {
   const { selectedTags, setSelectedTags, addSelectedTag, removeSelectedTag } =
     useTagStore();
   const { data: allMixes, error } = useSWR("/api/mixes");
   const router = useRouter();
+  const { onPlayClick } = useSelectedTrack(); // Get the onPlayClick function from the context
 
   useEffect(() => {
     // Clear selected tags when leaving the page
@@ -114,7 +116,11 @@ const Explore = () => {
       </ul>
 
       <div className={styles.explore_select}>
-        <MixList mixes={filteredMixes} onTagClick={handleFilteredTagClick} />
+        <MixList
+          mixes={filteredMixes}
+          onTagClick={handleFilteredTagClick}
+          onPlayClick={onPlayClick}
+        />
       </div>
     </div>
   );
