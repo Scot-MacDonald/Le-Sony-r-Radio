@@ -1,46 +1,53 @@
-import { useState, useEffect, useMemo } from "react";
+// Explore.js
+import { useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router"; // Import the useRouter hook
+import { useRouter } from "next/router";
 import useSWR, { mutate } from "swr";
 import MixList from "@/components/MixList";
 import styles from "@/styles/explore.module.css";
-import { useTagStore } from "@/store/store";
+import { useTagStore, clearSelectedTags } from "@/store/tagStore";
 
-export default function Explore() {
-  const [selectedItems, setSelectedItems] = useState([]);
+const Explore = () => {
+  const { selectedTags, setSelectedTags, addSelectedTag, removeSelectedTag } =
+    useTagStore();
   const { data: allMixes, error } = useSWR("/api/mixes");
-  const router = useRouter(); // Initialize the useRouter hook
+  const router = useRouter();
 
-  // Add any necessary logic inside the useEffect hook
   useEffect(() => {
-    // Your side effect logic here, if needed
-  }, [allMixes]);
+    // Clear selected tags when leaving the page
+    return () => {
+      clearSelectedTags();
+    };
+  }, []);
 
-  // Initialize filteredMixes using useMemo
-  const filteredMixes = useMemo(() => {
-    return allMixes
-      ? allMixes.filter((mix) =>
-          selectedItems.every((tag) => mix.tags.includes(tag))
-        )
-      : [];
-  }, [allMixes, selectedItems]);
-
-  // Add the following useEffect for logging
   useEffect(() => {
-    console.log("Selected Tags in Explore:", selectedItems);
+    // Check if there are tags in the query parameters
+    const { tags } = router.query;
+    if (tags && typeof tags === "string") {
+      // Set the selected tags based on the query parameters
+      const tagsArray = tags.split(",");
+      setSelectedTags(tagsArray);
+    }
+  }, [router.query]);
+
+  const filteredMixes = allMixes
+    ? allMixes.filter((mix) =>
+        selectedTags.every((tag) => mix.tags.includes(tag))
+      )
+    : [];
+
+  useEffect(() => {
+    console.log("Selected Tags in Explore:", selectedTags);
     console.log("All Mixes in Explore:", allMixes);
     console.log("Filtered Mixes in Explore:", filteredMixes);
-  }, [selectedItems, allMixes, filteredMixes]);
+  }, [selectedTags, allMixes, filteredMixes]);
 
   if (error) return <div>Error loading mixes</div>;
   if (!allMixes || !Array.isArray(allMixes)) return <div>Loading mixes...</div>;
 
-  // Extract all unique tags from all mixes
   const allTags = Array.from(
     new Set(allMixes.reduce((acc, mix) => [...acc, ...(mix.tags || [])], []))
   );
-
-  // Function to update the URL when tags change
   const updateURL = (tags) => {
     const queryString = tags.length > 0 ? `?tags=${tags.join(",")}` : "";
     router.push(
@@ -54,22 +61,30 @@ export default function Explore() {
   };
   const sortedAllTags = allTags.sort();
 
+  const handleFilteredTagClick = (tag) => {
+    if (!selectedTags.includes(tag)) {
+      // Add the clicked tag to the selected tags
+      addSelectedTag(tag);
+      // Trigger re-fetch when tags change
+      mutate("/api/mixes");
+      // Update the URL
+      updateURL([...selectedTags, tag]);
+    }
+  };
+
   return (
     <div>
       <h1>EXPLORE</h1>
       <ul className={styles.selectionBar}>
-        {selectedItems.map((item, index) => (
+        {selectedTags.map((item, index) => (
           <li className={styles.tags} key={index}>
             {item}{" "}
             <button
               className={styles.xBt}
               onClick={() => {
-                const updatedItems = selectedItems.filter(
-                  (prevItem) => prevItem !== item
-                );
-                setSelectedItems(updatedItems);
-                mutate("/api/mixes"); // Trigger re-fetch when tags change
-                updateURL(updatedItems); // Update the URL
+                removeSelectedTag(item);
+                mutate("/api/mixes");
+                updateURL(selectedTags.filter((tag) => tag !== item));
               }}
             >
               x
@@ -85,11 +100,10 @@ export default function Explore() {
             <button
               className={styles.button}
               onClick={() => {
-                if (!selectedItems.includes(tag)) {
-                  const updatedItems = [...selectedItems, tag];
-                  setSelectedItems(updatedItems);
+                if (!selectedTags.includes(tag)) {
+                  addSelectedTag(tag);
                   mutate("/api/mixes");
-                  updateURL(updatedItems);
+                  updateURL([...selectedTags, tag]);
                 }
               }}
             >
@@ -100,8 +114,10 @@ export default function Explore() {
       </ul>
 
       <div className={styles.explore_select}>
-        <MixList mixes={filteredMixes} />
+        <MixList mixes={filteredMixes} onTagClick={handleFilteredTagClick} />
       </div>
     </div>
   );
-}
+};
+
+export default Explore;
