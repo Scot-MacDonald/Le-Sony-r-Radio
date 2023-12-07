@@ -5,7 +5,7 @@ export default function Footer() {
   const { selectedTrack } = useSelectedTrack();
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footerSC}>
       {selectedTrack && (
         <iframe
           width="100%"

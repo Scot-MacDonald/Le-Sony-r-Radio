@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import styles from "@/styles/nav.module.css";
-import SearchBar from "../-SearchBar";
-import NavSearchBar from "../Search/NavSearchBar";
+import NavSearchBar from "@/components/NavSearchBar";
 
 export default function Nav() {
   const { data: session } = useSession();
