@@ -16,9 +16,11 @@ export default function MixList({ mixes, onTagClick, onPlayClick }) {
     return <h1>No mixes available</h1>;
   }
 
-  const dataArray = mixes;
+  const sortedMixes = mixes
+    .slice()
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  const filteredMixes = dataArray.filter((mix) =>
+  const filteredMixes = sortedMixes.filter((mix) =>
     selectedTags.every((tag) => mix.tags.includes(tag))
   );
 

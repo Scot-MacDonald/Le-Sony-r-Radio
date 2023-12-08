@@ -57,50 +57,39 @@ export default function Event() {
           height={205}
         />
         <section className={styles.eventProfile}>
+          <button
+            className={styles.bt}
+            onClick={() => {
+              setIsEditMode(!isEditMode);
+            }}
+          >
+            <span role="img" aria-label="A pencil">
+              Edit Mix
+            </span>
+          </button>
+          <button
+            className={styles.bt}
+            onClick={handleDelete}
+            disabled={isEditMode}
+          >
+            <span role="img" aria-label="A cross indicating deletion">
+              Delete Mix
+            </span>
+          </button>
           <div className={styles.bio}>
             <h1>{data.title}</h1>
 
             <p>{data.description}</p>
           </div>
           <div className={styles.tracklist}>
-            <ul>
-              <li>Track 1</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-              <li>Track 1</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-              <li>Track 1</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-            </ul>
-
-            <button
-              onClick={() => {
-                setIsEditMode(!isEditMode);
-              }}
-            >
-              <span role="img" aria-label="A pencil">
-                Edit Mix
-              </span>
-            </button>
-            <button onClick={handleDelete} disabled={isEditMode}>
-              <span role="img" aria-label="A cross indicating deletion">
-                Delete Mix
-              </span>
-            </button>
-
             {isEditMode && (
               <EventForm onSubmit={handleEdit} value={data} isEditMode={true} />
             )}
-            <div className={styles.foot}>
-              <Link href="/events" className={styles.bt}>
-                Back to all
-              </Link>
-            </div>
+          </div>
+          <div className={styles.foot}>
+            <Link href="/events" className={styles.bt}>
+              Back to all
+            </Link>
           </div>
         </section>
       </section>

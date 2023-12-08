@@ -9,11 +9,24 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  
+  
+
+  [data-theme='dark'],
+  [data-theme='dark'] body {
+    color: #000;
+    background: #fff;
+  }
+
   body {
    background:black;
    color:white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+  }
+
+  p{
+    font-size:16px;
   }
   
   a {
@@ -31,7 +44,7 @@ export default createGlobalStyle`
     list-style-type: none;
   }
   main{
-    margin-top:90px;
+    margin-top:83px;
     
   }
  h1{
@@ -79,4 +92,12 @@ h2{
       background-color:black;
     }
   
+    .dark{
+      min-width:26px;
+      max-width:30px;
+      max-height:30px;
+      border-right:white solid 1px;
+      border-bottom:white solid 1px;
+      background-color:transparent;
+    }
 `;

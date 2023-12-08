@@ -1,0 +1,53 @@
+/* featured.module.css */
+.featured {
+  display: flex;
+  width: 100%;
+}
+
+.leftColumn {
+  background-color: black;
+  color: white;
+  border-right: 1px solid white;
+  width: 50%;
+  width: calc(50% + 41px);
+}
+
+.row {
+  padding: 40px 0;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+}
+
+.row:hover {
+  background-color: white;
+  color: black;
+}
+
+.rightColumn {
+  position: relative;
+  width: calc(50% - 41px);
+  max-height: 100%;
+  overflow: hidden;
+  border-bottom: white solid 1px;
+}
+
+.imageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.featuredImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.p {
+  font-size: 16px;
+  margin-left: 10px;
+}
