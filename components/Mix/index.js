@@ -80,6 +80,31 @@ export default function Mix() {
         />
 
         <section className={styles.mixProfile}>
+          <div>
+            {session && (
+              <div>
+                <button
+                  className={styles.bt}
+                  onClick={() => {
+                    setIsEditMode(!isEditMode);
+                  }}
+                >
+                  <span role="img" aria-label="A pencil">
+                    Edit Mix
+                  </span>
+                </button>
+                <button
+                  className={styles.bt}
+                  onClick={handleDelete}
+                  disabled={isEditMode}
+                >
+                  <span role="img" aria-label="A cross indicating deletion">
+                    Delete Mix
+                  </span>
+                </button>
+              </div>
+            )}
+          </div>
           <div className={styles.bioHead}>
             <div
               className={`${styles.playButton} ${
@@ -141,35 +166,15 @@ export default function Mix() {
               <li>Crawling With Tarts, Miner's Wash</li>
               <li>Blu Cocteau, Lo Hex</li>
             </ul>
-            <div>
-              {session && (
-                <div>
-                  <button
-                    onClick={() => {
-                      setIsEditMode(!isEditMode);
-                    }}
-                  >
-                    <span role="img" aria-label="A pencil">
-                      Edit Mix
-                    </span>
-                  </button>
-                  <button onClick={handleDelete} disabled={isEditMode}>
-                    <span role="img" aria-label="A cross indicating deletion">
-                      Delete Mix
-                    </span>
-                  </button>
-                </div>
-              )}
-            </div>
 
             {isEditMode && (
               <MixForm onSubmit={handleEdit} value={data} isEditMode={true} />
             )}
-            <div className={styles.foot}>
-              <Link href="/" className={styles.bt}>
-                Back to all
-              </Link>
-            </div>
+          </div>
+          <div className={styles.foot}>
+            <Link href="/" className={styles.bt}>
+              Back to all
+            </Link>
           </div>
         </section>
       </section>

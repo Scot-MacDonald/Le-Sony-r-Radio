@@ -1,0 +1,40 @@
+/* featured.module.css */
+.featured {
+  display: flex;
+  width: 100%;
+}
+
+.leftColumn {
+  background-color: black;
+  color: white; /* Optional: Set text color for better visibility */
+  padding: 10px; /* Adjust padding as needed */
+  width: 50%;
+}
+
+.row {
+  padding: 40px 0;
+  border-bottom: 1px solid white; /* Optional: Add border between rows */
+  cursor: pointer;
+}
+
+.rightColumn {
+  position: relative; /* Required for absolute positioning of the image container */
+  width: 50%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.imageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.featuredImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Apply cover property for image */
+  object-position: center; /* Optional: Center the image */
+}
