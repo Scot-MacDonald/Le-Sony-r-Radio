@@ -44,7 +44,7 @@ export default createGlobalStyle`
     list-style-type: none;
   }
   main{
-    margin-top:90px;
+    margin-top:83px;
     
   }
  h1{
