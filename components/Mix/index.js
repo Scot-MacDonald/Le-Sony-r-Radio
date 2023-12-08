@@ -56,17 +56,22 @@ export default function Mix() {
     setSelectedTrack(isSameTrack ? null : data.url);
   };
 
-  const renderTags = (tags) => (
-    <div className={styles.mixTags}>
-      {tags
-        .flatMap((tagItem) => tagItem.split(","))
-        .map((tag, index) => (
-          <span className={styles.mixTag} key={index}>
-            {tag.trim()}
+  // components/Mix/index.js
+  const renderTags = (tags) => {
+    if (!tags || !Array.isArray(tags)) {
+      return null; // or return some default value, depending on your requirements
+    }
+
+    return (
+      <div className={styles.tags}>
+        {tags.map((tag) => (
+          <span key={tag} className={styles.tag}>
+            {tag}
           </span>
         ))}
-    </div>
-  );
+      </div>
+    );
+  };
 
   return (
     <>

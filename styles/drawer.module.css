@@ -13,9 +13,16 @@
 .liveChannel__footer {
   font-size: 14px;
   line-height: 16px;
-  padding: 12px 10px;
+
+  display: flex;
+}
+.liveChannel__footer__label {
   border-right: 1px solid white;
-  display: inline-flex;
+  padding: 12px 10px;
+}
+
+.liveChannel__footer__details {
+  padding: 12px 10px;
 }
 
 .liveChannel__content {

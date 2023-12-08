@@ -2,6 +2,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Results = () => {
   const router = useRouter();
@@ -25,7 +26,7 @@ const Results = () => {
       {/* Display search results */}
       {results.map((result) => (
         <div key={result._id}>
-          <p>{result.title}</p>
+          {/* Common information for both Event and Mix */}
           <p>{result.city}</p>
           <Image
             src={result.imageURL}
@@ -34,7 +35,12 @@ const Results = () => {
             height={205}
           />
 
-          {/* Display other relevant information based on the result type (Event or Mix) */}
+          {/* Render link based on result type */}
+          {result.type === "event" ? (
+            <Link href={`/events/${result.slug}`}>{result.title}</Link>
+          ) : (
+            <Link href={`/${result.slug}`}>{result.title}</Link>
+          )}
         </div>
       ))}
     </div>

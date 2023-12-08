@@ -54,7 +54,12 @@ export default function TemporaryDrawer() {
                 Music To Ease Your Disease
               </div>
             </div>
-            <div className={styles.liveChannel__footer}>NEXT ON 1</div>
+            <div className={styles.liveChannel__footer}>
+              <div className={styles.liveChannel__footer__label}>NEXT ON 1</div>
+              <div className={styles.liveChannel__footer__details}>
+                Rockers Delight w/ Exotic Gardens
+              </div>
+            </div>
           </div>
           <div className={`${styles.liveChannel} ${styles.channel2}`}>
             <div className={styles.liveChannel__header}></div>
@@ -73,7 +78,13 @@ export default function TemporaryDrawer() {
               </div>
             </div>
 
-            <div className={styles.liveChannel__footer}>foot 2</div>
+            <div className={styles.liveChannel__footer}>
+              {" "}
+              <div className={styles.liveChannel__footer__label}>NEXT ON2</div>
+              <div className={styles.liveChannel__footer__details}>
+                Andrew Weatherall Presents: Music's Not For Everyone
+              </div>
+            </div>
           </div>
         </div>
       </>
