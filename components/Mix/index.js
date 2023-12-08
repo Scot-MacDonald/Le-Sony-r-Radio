@@ -56,6 +56,18 @@ export default function Mix() {
     setSelectedTrack(isSameTrack ? null : data.url);
   };
 
+  const renderTags = (tags) => (
+    <div className={styles.mixTags}>
+      {tags
+        .flatMap((tagItem) => tagItem.split(","))
+        .map((tag, index) => (
+          <span className={styles.mixTag} key={index}>
+            {tag.trim()}
+          </span>
+        ))}
+    </div>
+  );
+
   return (
     <>
       <section className={styles.mixContainer}>
@@ -68,8 +80,7 @@ export default function Mix() {
         />
 
         <section className={styles.mixProfile}>
-          <div className={styles.bio}>
-            {/* Play/Stop button */}
+          <div className={styles.bioHead}>
             <div
               className={`${styles.playButton} ${
                 selectedTrack === data.url ? styles.active : ""
@@ -102,26 +113,33 @@ export default function Mix() {
                 </svg>
               )}
             </div>
-            <h1 className={styles.bio__title}>{data.title}</h1>
-            <h2 className={styles.bio__city}>{data.city}</h2>
-            <p>{data.description}</p>
-            <p>{data.tags}</p>
+            <div className={styles.bioInfos}>
+              <h1 className={styles.bio__title}>{data.title}</h1>
+              <h2 className={styles.bio__city}>{data.city}</h2>
+            </div>
+          </div>
+          <div className={styles.bio}>
+            <div className={styles.border}>
+              <p>{data.description}</p>
+              {renderTags(data.tags)}
+            </div>
           </div>
 
           <div className={styles.tracklist}>
             <ul>
-              <li>Track 1</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-              <li>Track 1</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-              <li>Track 1</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
-              <li>Track 2</li>
+              <li>Harmony 400, Crescent</li>
+              <li>zonin dj, untitled - interview mix</li>
+              <li>Hermann And Klein, A Day In A Park</li>
+              <li>E-Plume, Kiki’s Gambert</li>
+              <li>Brindle Spork, Wild Why (Edit)</li>
+              <li>Solvent (ISAN mix), Hergly Bergly (Less Mad Andy Mix)</li>
+              <li>Phonem, Un Barrage Contre Le Pacifique</li>
+              <li>Sunwoods, Something Wonderful</li>
+              <li>Stendec, Arvo</li>
+              <li>Languis, Stop Action</li>
+              <li>Roland P. Young, Velvet</li>
+              <li>Crawling With Tarts, Miner's Wash</li>
+              <li>Blu Cocteau, Lo Hex</li>
             </ul>
             <div>
               {session && (

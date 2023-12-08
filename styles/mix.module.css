@@ -1,5 +1,5 @@
-.mixContainer {
-}
+/* .mixContainer {
+} */
 
 .profileImage {
   margin-top: 67px;
@@ -15,12 +15,36 @@
 }
 
 .mixProfile {
-  margin-top: 0;
   top: 50%;
   position: absolute;
-  width: 40%;
-  min-width: 40%;
+
+  margin-top: 0;
+  width: 50%; /* Adjust the width according to your design */
+  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
+.bioHead {
+  box-sizing: border-box !important;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  color: black;
+  padding: 20px 20px 0 20px;
+
+  justify-content: space-between;
+  width: 100%;
+}
+.border {
+  border-top: 1px solid black;
+  padding-top: 20px;
+}
+
+.bioInfos {
+  flex: 1;
+}
+
 .bio__title {
   font-size: 28px;
   line-height: 32px;
@@ -30,9 +54,6 @@
   font-size: 16px;
   line-height: 21px;
   font-weight: 400;
-  padding: 10px 0 15px 0;
-  border-bottom: 1px solid black;
-  margin-bottom: 20px;
 }
 
 .bio__date {
@@ -51,10 +72,39 @@
 .bio {
   background-color: white;
   color: black;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
 }
 
-.tags {
+.mixTags {
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  margin: 0;
+  padding: 20px 0px 0 0;
+}
+
+.mixTag {
+  font-size: 12px;
+  margin: 2px;
+  padding: 6px 8px;
+  border: 1px solid #4c4c4c;
+  color: black;
+  text-decoration: none;
+  -webkit-transition: background-color 0.1s linear;
+  -moz-transition: background-color 0.1s linear;
+  -ms-transition: background-color 0.1s linear;
+  -o-transition: background-color 0.1s linear;
+  transition: background-color 0.1s linear;
+  text-transform: uppercase;
+}
+.mixTag:hover {
+  background-color: #4c4c4c;
+  color: white;
+}
+
+/* .tags {
   font-size: 12px;
   margin: 2px;
   padding: 6px 8px;
@@ -66,7 +116,7 @@
   -ms-transition: background-color 0.1s linear;
   -o-transition: background-color 0.1s linear;
   transition: background-color 0.1s linear;
-}
+} */
 
 .bt {
   color: black;
@@ -82,7 +132,9 @@
 
 .playButton {
   max-width: 30px;
-  height: auto;
+  height: 30px;
+  flex: 1;
+  padding-top: 10px;
 }
 .foot {
   background-color: white;

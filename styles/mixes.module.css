@@ -106,6 +106,7 @@
   -ms-transition: background-color 0.1s linear;
   -o-transition: background-color 0.1s linear;
   transition: background-color 0.1s linear;
+  text-transform: uppercase;
 }
 .mixTag:hover {
   background-color: #4c4c4c;

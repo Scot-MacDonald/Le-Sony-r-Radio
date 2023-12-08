@@ -5,6 +5,7 @@ import MixList from "../components/MixList";
 import Slider from "@/components/slider";
 import Demo from "@/components/Demo";
 import { useSelectedTrack } from "@/context/SelectedTrackContext";
+import ThemeSwitch from "@/components/ThemeSwitch";
 
 export default function HomePage() {
   const { data: mixesData, error, mutate } = useSWR("/api/mixes");
