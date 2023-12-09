@@ -99,7 +99,7 @@
   margin: 2px;
   padding: 6px 8px;
   border: 1px solid #4c4c4c;
-  color: #ccc;
+  color: var(--secondary);
   text-decoration: none;
   -webkit-transition: background-color 0.1s linear;
   -moz-transition: background-color 0.1s linear;
@@ -115,7 +115,7 @@
   font-size: 12px;
   margin: px; /* Add a value for margin */
   padding: 10px 5px;
-  color: #ccc;
+  color: var(--secondary);
   display: flex;
   justify-content: space-between;
 }
@@ -178,7 +178,7 @@
 }
 
 .mixTitle {
-  color: white; /* or any other styling for a link */
+  color: var(--font-color); /* or any other styling for a link */
   /* text-decoration: underline; */
   cursor: pointer;
   padding: 0px 5px 10px 5px;

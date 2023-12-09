@@ -9,18 +9,29 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  
+  :root {
+    --bg-color: black;
+    --font-color: white;
+    --bg-colorO: white;
+    --font-colorO: black;
+    --secondary:#ccc;
+   
+  }
 
 
   [data-theme='dark'],
   [data-theme='dark'] body {
     color: #242329;
-    background: #f6f6f6;
+    --bg-color: white;
+    --font-color: black;
+    --bg-colorO: black;
+    --font-colorO: white;
+    --secondary:black;
   }
 
   body {
-   background:black;
-   color:white;
+   background:var(--bg-color);
+    color:var( --font-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
   }
@@ -30,7 +41,7 @@ export default createGlobalStyle`
   }
   
   a {
-    color: white;
+    color: var( --font-color);
     text-decoration: none;
   }
   

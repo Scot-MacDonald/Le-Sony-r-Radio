@@ -75,7 +75,7 @@ const Explore = () => {
   };
 
   return (
-    <div>
+    <main>
       <h1>EXPLORE</h1>
       <ul className={styles.selectionBar}>
         {selectedTags.map((item, index) => (
@@ -122,7 +122,7 @@ const Explore = () => {
           onPlayClick={onPlayClick}
         />
       </div>
-    </div>
+    </main>
   );
 };
 

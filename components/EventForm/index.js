@@ -1,8 +1,9 @@
-// MixForm.js
+// EventForm.js
 import styles from "@/styles/mixForm.module.css";
 import React, { useState, useEffect, useMemo } from "react";
 
 export default function EventForm({ value, onSubmit, isEditMode }) {
+  const [successMessage, setSuccessMessage] = useState(""); // New state for success message
   const initialTags = useMemo(() => {
     return value && value.tags
       ? Array.isArray(value.tags)
@@ -15,9 +16,7 @@ export default function EventForm({ value, onSubmit, isEditMode }) {
 
   const [formValues, setFormValues] = useState({
     imageURL: "",
-
     title: "",
-
     description: "",
     date: "",
   });
@@ -27,9 +26,7 @@ export default function EventForm({ value, onSubmit, isEditMode }) {
       setFormValues((prevFormValues) => ({
         ...prevFormValues,
         imageURL: value.imageURL || "",
-
         title: value.title || "",
-
         description: value.description || "",
         date: formatDate(value.date) || "",
       }));
@@ -63,7 +60,7 @@ export default function EventForm({ value, onSubmit, isEditMode }) {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Send tags as an array in the formData object
@@ -72,16 +69,25 @@ export default function EventForm({ value, onSubmit, isEditMode }) {
       tags: tags,
     };
 
-    // Call the onSubmit function with the form data
-    onSubmit(formData);
+    try {
+      // Call the onSubmit function with the form data
+      await onSubmit(formData);
+      setSuccessMessage("Form submitted successfully!"); // Set success message
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   const legendText = isEditMode ? "EDIT EVENT" : "ADD EVENT";
+
   return (
     <main className={styles.container}>
       <div className={styles.formContainer}>
         <fieldset className={styles.fieldset}>
           <legend className={styles.legend}>{legendText}</legend>
+          {successMessage && (
+            <div className={styles.successMessage}>{successMessage}</div>
+          )}
           <form className={styles.form} onSubmit={handleSubmit}>
             <label htmlFor="imageURL"></label>
             <input

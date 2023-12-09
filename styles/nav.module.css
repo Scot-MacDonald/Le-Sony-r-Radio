@@ -3,7 +3,7 @@
   font-size: 14px;
   align-items: center;
   padding: 10px;
-  background: black;
+  background-color: black;
 }
 
 .nav li {
@@ -87,6 +87,7 @@
   .nav li a {
     margin-right: 0;
     margin-bottom: 10px;
+    font-size: 8vw;
   }
 
   .searchBarContainer {

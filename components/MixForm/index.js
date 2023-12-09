@@ -3,6 +3,7 @@ import styles from "@/styles/mixForm.module.css";
 import React, { useState, useEffect, useMemo } from "react";
 
 export default function MixForm({ value, onSubmit, isEditMode }) {
+  const [successMessage, setSuccessMessage] = useState(""); // New state for success message
   const initialTags = useMemo(() => {
     return value && value.tags
       ? Array.isArray(value.tags)
@@ -12,7 +13,6 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
   }, [value]);
 
   const [tags, setTags] = useState(initialTags);
-
   const [formValues, setFormValues] = useState({
     imageURL: "",
     url: "",
@@ -63,7 +63,7 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Send tags as an array in the formData object
@@ -72,15 +72,25 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
       tags: tags,
     };
 
-    // Call the onSubmit function with the form data
-    onSubmit(formData);
+    try {
+      // Call the onSubmit function with the form data
+      await onSubmit(formData);
+      setSuccessMessage("Form submitted successfully!"); // Set success message
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
+
   const legendText = isEditMode ? "EDIT MIX" : "ADD MIX";
+
   return (
     <main className={styles.container}>
       <div className={styles.formContainer}>
         <fieldset className={styles.fieldset}>
           <legend className={styles.legend}>{legendText}</legend>
+          {successMessage && (
+            <div className={styles.successMessage}>{successMessage}</div>
+          )}
           <form className={styles.form} onSubmit={handleSubmit}>
             <label htmlFor="imageURL"></label>
             <input

@@ -67,8 +67,20 @@ input.form {
 .button {
   background: #4c4c4c;
   border: none;
-
+  margin-top: 30px;
   padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background: white;
+  border: none;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.successMessage {
+  color: #008c69;
 }
 
 .fieldset {
