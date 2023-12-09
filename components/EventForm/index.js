@@ -76,11 +76,12 @@ export default function EventForm({ value, onSubmit, isEditMode }) {
     onSubmit(formData);
   };
 
+  const legendText = isEditMode ? "EDIT EVENT" : "ADD EVENT";
   return (
     <main className={styles.container}>
       <div className={styles.formContainer}>
         <fieldset className={styles.fieldset}>
-          <legend className={styles.legend}>ADD EVENT</legend>
+          <legend className={styles.legend}>{legendText}</legend>
           <form className={styles.form} onSubmit={handleSubmit}>
             <label htmlFor="imageURL"></label>
             <input

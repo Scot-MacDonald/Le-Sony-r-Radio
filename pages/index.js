@@ -49,7 +49,6 @@ export default function HomePage() {
   return (
     <>
       <Featured />
-      <ThemeSwitch />
       <MixList
         mixes={mixesData}
         onTagClick={handleTagClick}

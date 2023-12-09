@@ -10,7 +10,7 @@ export default createGlobalStyle`
   }
 
   
-  
+
 
   [data-theme='dark'],
   [data-theme='dark'] body {
@@ -44,7 +44,7 @@ export default createGlobalStyle`
     list-style-type: none;
   }
   main{
-    margin-top:83px;
+    margin-top:82px;
     
   }
  h1{
@@ -100,4 +100,7 @@ h2{
       border-bottom:white solid 1px;
       background-color:transparent;
     }
+
+    
+    
 `;

@@ -70,7 +70,7 @@ export default function Event() {
                   }}
                 >
                   <span role="img" aria-label="A pencil">
-                    Edit Mix
+                    Edit Event
                   </span>
                 </button>
                 <button
@@ -79,7 +79,7 @@ export default function Event() {
                   disabled={isEditMode}
                 >
                   <span role="img" aria-label="A cross indicating deletion">
-                    Delete Mix
+                    Delete Event
                   </span>
                 </button>
               </div>

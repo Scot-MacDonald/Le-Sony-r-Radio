@@ -1,0 +1,20 @@
+.switch {
+  border-right: white solid 1px;
+  border-bottom: white solid 1px;
+  border-top: transparent;
+  border-left: transparent;
+  border-radius: 0;
+  padding: 0;
+  min-width: 26px;
+  max-width: 30px;
+  max-height: 30px;
+  background-color: black;
+  margin-right: 10px;
+}
+.switch:hover {
+  background-color: black;
+}
+.svg {
+  max-width: 28px;
+  max-height: 28px;
+}

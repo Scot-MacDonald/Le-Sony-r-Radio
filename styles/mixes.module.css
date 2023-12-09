@@ -11,7 +11,7 @@
 }
 
 .mix {
-  width: calc(20% - 30px);
+  width: calc(100% - 30px);
 
   box-sizing: border-box;
 }
@@ -106,7 +106,6 @@
   -ms-transition: background-color 0.1s linear;
   -o-transition: background-color 0.1s linear;
   transition: background-color 0.1s linear;
-  text-transform: uppercase;
 }
 .mixTag:hover {
   background-color: #4c4c4c;

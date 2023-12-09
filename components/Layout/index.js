@@ -22,6 +22,7 @@ const RootLayout = ({ children }) => {
             animateState: {
               opacity: 1,
             },
+
             exitState: {},
           }}
           className="base-page-size"

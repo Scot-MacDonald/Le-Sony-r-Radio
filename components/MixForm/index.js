@@ -75,12 +75,12 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
     // Call the onSubmit function with the form data
     onSubmit(formData);
   };
-
+  const legendText = isEditMode ? "EDIT MIX" : "ADD MIX";
   return (
     <main className={styles.container}>
       <div className={styles.formContainer}>
         <fieldset className={styles.fieldset}>
-          <legend className={styles.legend}>ADD MIX</legend>
+          <legend className={styles.legend}>{legendText}</legend>
           <form className={styles.form} onSubmit={handleSubmit}>
             <label htmlFor="imageURL"></label>
             <input

@@ -1,6 +1,7 @@
 // Featured.js
 import { useState, useEffect } from "react";
 import styles from "@/styles/featured.module.css";
+import Link from "next/link";
 
 const Featured = () => {
   const [featuredMixes, setFeaturedMixes] = useState([]);
@@ -57,14 +58,16 @@ const Featured = () => {
     <div className={styles.featured}>
       <div className={styles.leftColumn}>
         {featuredMixes.map((mix) => (
-          <div
-            key={mix._id}
-            className={styles.row}
-            onMouseEnter={() => handleMixHover(mix)}
-          >
-            <p className={styles.p}>{formatDate(mix.date)}</p>
-            <h2>{mix.title}</h2>
-          </div>
+          <Link href={`/${mix.slug}`}>
+            <div
+              key={mix._id}
+              className={styles.row}
+              onMouseEnter={() => handleMixHover(mix)}
+            >
+              <p className={styles.p}>{formatDate(mix.date)}</p>
+              <h2>{mix.title}</h2>
+            </div>
+          </Link>
         ))}
       </div>
       <div className={styles.rightColumn}>
