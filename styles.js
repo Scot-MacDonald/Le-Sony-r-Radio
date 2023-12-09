@@ -14,8 +14,8 @@ export default createGlobalStyle`
 
   [data-theme='dark'],
   [data-theme='dark'] body {
-    color: #000;
-    background: #fff;
+    color: #242329;
+    background: #f6f6f6;
   }
 
   body {

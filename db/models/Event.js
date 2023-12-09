@@ -9,6 +9,7 @@ const eventSchema = new Schema({
   description: { type: String, required: true },
   imageURL: { type: String, required: true },
   tags: { type: [String], default: [] }, // Add this line for tags
+  type: { type: String, required: true },
 });
 
 eventSchema.pre("save", function (next) {

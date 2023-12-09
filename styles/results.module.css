@@ -1,5 +1,36 @@
-.item {
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
-  padding: 20px;
+.featured {
+  list-style: none;
+  padding: 0;
+}
+
+.row {
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 40px 10px;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.row:hover {
+  background-color: white;
+  color: black;
+}
+
+.row a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.row h2 {
+  margin: 0;
+}
+
+.row p {
+  margin: 0;
+}
+
+.type {
+  padding-left: 10px;
 }
