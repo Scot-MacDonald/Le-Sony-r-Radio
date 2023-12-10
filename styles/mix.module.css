@@ -66,9 +66,29 @@
 
 .tracklist {
   background-color: black;
-
   padding: 20px;
 }
+.tracklist__title {
+  background-color: black;
+  padding-bottom: 20px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+}
+.track {
+  background-color: black;
+  padding: 5px 0;
+  line-height: 18px;
+}
+.track__artist {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
+}
+.track__title {
+  font-size: 13px;
+}
+
 .bio {
   background-color: white;
   color: black;

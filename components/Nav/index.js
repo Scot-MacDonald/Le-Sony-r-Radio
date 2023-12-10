@@ -23,7 +23,7 @@ export default function Nav() {
       <ul className={`${styles.nav} ${showMenu ? styles.show : ""}`}>
         <li>
           <Link href="/" onClick={toggleMenu}>
-            LAST_TRANS_RADIO
+            TRANSMIT_RADIO
           </Link>
         </li>
         <li>

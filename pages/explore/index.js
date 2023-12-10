@@ -75,14 +75,14 @@ const Explore = () => {
   };
 
   return (
-    <main>
+    <section className={styles.explore}>
       <h1>EXPLORE</h1>
-      <ul className={styles.selectionBar}>
+      <ul className={styles.explore__selectionBar}>
         {selectedTags.map((item, index) => (
-          <li className={styles.tags} key={index}>
+          <li className={styles.explore__tags} key={index}>
             {item}{" "}
             <button
-              className={styles.xBt}
+              className={styles.explore__bt}
               onClick={() => {
                 removeSelectedTag(item);
                 mutate("/api/mixes");
@@ -96,9 +96,9 @@ const Explore = () => {
       </ul>
 
       <h2>GENRES</h2>
-      <ul className={styles.select}>
+      <ul className={styles.explore__select}>
         {sortedAllTags.map((tag) => (
-          <li className={styles.tags} key={tag}>
+          <li className={styles.explore__tags} key={tag}>
             <button
               className={styles.button}
               onClick={() => {
@@ -122,7 +122,7 @@ const Explore = () => {
           onPlayClick={onPlayClick}
         />
       </div>
-    </main>
+    </section>
   );
 };
 

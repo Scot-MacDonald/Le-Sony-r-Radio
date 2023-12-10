@@ -156,22 +156,70 @@ export default function Mix() {
           </div>
 
           <div className={styles.tracklist}>
-            <ul>
-              <li>Harmony 400, Crescent</li>
-              <li>zonin dj, untitled - interview mix</li>
-              <li>Hermann And Klein, A Day In A Park</li>
-              <li>E-Plume, Kiki’s Gambert</li>
-              <li>Brindle Spork, Wild Why (Edit)</li>
-              <li>Solvent (ISAN mix), Hergly Bergly (Less Mad Andy Mix)</li>
-              <li>Phonem, Un Barrage Contre Le Pacifique</li>
-              <li>Sunwoods, Something Wonderful</li>
-              <li>Stendec, Arvo</li>
-              <li>Languis, Stop Action</li>
-              <li>Roland P. Young, Velvet</li>
-              <li>Crawling With Tarts, Miner's Wash</li>
-              <li>Blu Cocteau, Lo Hex</li>
+            <div className={styles.tracklist__title}>Tracklist</div>
+            <ul className={styles.tracks}>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Harmony 400</div>
+                <div className={styles.track__title}> Crescent</div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>zonin dj</div>
+                <div className={styles.track__title}>
+                  {" "}
+                  untitled - interview mix
+                </div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Hermann And Klein</div>
+                <div className={styles.track__title}> A Day In A Park</div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>E-Plume</div>
+                <div className={styles.track__title}> Kiki’s Gambert</div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Brindle Spork</div>
+                <div className={styles.track__title}> Wild Why (Edit)</div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Solvent (ISAN mix)</div>
+                <div className={styles.track__title}>
+                  {" "}
+                  Hergly Bergly (Less Mad Andy Mix)
+                </div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Phonem</div>
+                <div className={styles.track__title}>
+                  {" "}
+                  Un Barrage Contre Le Pacifique
+                </div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Sunwoods</div>
+                <div className={styles.track__title}> Something Wonderful</div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Stendec</div>
+                <div className={styles.track__title}> Arvo</div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Languis</div>
+                <div className={styles.track__title}> Stop Action</div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Roland P. Young</div>
+                <div className={styles.track__title}> Velvet</div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Crawling With Tarts</div>
+                <div className={styles.track__title}> Miner's Wash</div>
+              </li>
+              <li className={styles.track}>
+                <div className={styles.track__artist}>Blu Cocteau</div>
+                <div className={styles.track__title}> Lo Hex</div>
+              </li>
             </ul>
-
             {isEditMode && (
               <MixForm onSubmit={handleEdit} value={data} isEditMode={true} />
             )}

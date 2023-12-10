@@ -1,8 +1,16 @@
-/* .main h1 {
+.explore {
   margin-top: 100px;
-  padding: 10px;
-} */
-.selectionBar {
+  padding: 0px;
+}
+.explore h1 {
+  margin-left: 10px;
+  padding: 0px;
+}
+.explore h2 {
+  margin-left: 10px;
+  padding: 0px;
+}
+.explore__selectionBar {
   background-color: #121212;
   padding: 10px;
   display: flex;
@@ -19,7 +27,7 @@
   cursor: pointer;
   outline: inherit;
 }
-.select {
+.explore__select {
   display: flex;
   flex-wrap: wrap;
   background-color: #121212;
@@ -30,7 +38,7 @@
 .header {
   display: flex;
 }
-.tags {
+.explore__tags {
   font-size: 12px;
   margin: 2px;
   padding: 6px 8px;
@@ -43,9 +51,10 @@
   -o-transition: background-color 0.1s linear;
   transition: background-color 0.1s linear;
   cursor: pointer;
+  font-weight: bold;
 }
 
-.xBt {
+.explore__bt {
   color: white;
   background: transparent;
   border: transparent;

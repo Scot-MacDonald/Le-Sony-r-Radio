@@ -12,8 +12,8 @@ export default createGlobalStyle`
   :root {
     --bg-color: black;
     --font-color: white;
-    --bg-colorO: white;
-    --font-colorO: black;
+    --colorLive: black;
+    --fontReverse: black;
     --secondary:#ccc;
    
   }
@@ -24,9 +24,10 @@ export default createGlobalStyle`
     color: #242329;
     --bg-color: white;
     --font-color: black;
-    --bg-colorO: black;
-    --font-colorO: white;
+    --colorLive: white;
+    --fontReverse: white;
     --secondary:black;
+  
   }
 
   body {
@@ -61,12 +62,12 @@ export default createGlobalStyle`
  h1{
   font-size: 28px;
   line-height: 32px;
-  margin: 10px;
+  
 }
 h2{
   font-size: 28px;
   line-height: 32px;
-  margin: 10px;
+  margin: 0px;
 }
 
   footer {
