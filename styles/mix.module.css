@@ -67,6 +67,7 @@
 .tracklist {
   background-color: black;
   padding: 20px;
+  color: white;
 }
 .tracklist__title {
   background-color: black;
@@ -87,6 +88,7 @@
 }
 .track__title {
   font-size: 13px;
+  color: white;
 }
 
 .bio {

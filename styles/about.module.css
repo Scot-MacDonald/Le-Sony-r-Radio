@@ -1,0 +1,46 @@
+.formContainer {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  max-width: none;
+  width: 600px;
+  padding: 32px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 600px;
+  gap: 5px;
+  width: 100%;
+}
+
+.fieldset {
+  border: 1px solid #4c4c4c;
+  padding: 40px;
+  width: 600px;
+  max-width: 600px;
+  background: black;
+}
+
+.legend {
+  padding: 0 2px;
+}
+
+.login {
+  padding: 150px;
+}
+
+.form {
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  margin-left: auto;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  padding-top: 15px;
+}

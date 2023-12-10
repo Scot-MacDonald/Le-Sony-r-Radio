@@ -1,4 +1,6 @@
-// MixForm.js
+// LoginForm.js
+
+//////////////////////
 import styles from "@/styles/mixForm.module.css";
 import React, { useState, useEffect, useMemo } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
@@ -22,7 +24,7 @@ export default function LoginForm() {
     );
   }
 }
-
+/////////////////////////////////////////////////////////////////////////
 // return (
 //   <main className={styles.container}>
 //     <div className={styles.formContainer}>

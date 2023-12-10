@@ -10,6 +10,9 @@
   width: 50%;
   width: calc(50% + 41px);
 }
+[data-theme="dark"] .leftColumn {
+  border-right: 1px solid black;
+}
 
 .row {
   padding: 40px 0;
@@ -18,9 +21,20 @@
   transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
 }
 
+[data-theme="dark"] .row {
+  padding: 40px 0;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+}
+
 .row:hover {
   background-color: white;
   color: black;
+}
+[data-theme="dark"] .row:hover {
+  background-color: black;
+  color: white;
 }
 
 .rightColumn {
@@ -29,6 +43,9 @@
   max-height: 100%;
   overflow: hidden;
   border-bottom: white solid 1px;
+}
+[data-theme="dark"] .rightColumn {
+  border-bottom: black solid 1px;
 }
 
 .imageContainer {

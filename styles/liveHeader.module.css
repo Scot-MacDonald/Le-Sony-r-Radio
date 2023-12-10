@@ -8,6 +8,13 @@
   display: flex;
   font-size: 14px;
 }
+[data-theme="dark"] .header {
+  background-color: black;
+  color: white;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
 .main {
   flex: 1;
   order: 2;
@@ -16,11 +23,18 @@
   padding: 0.2rem 0.2rem;
   display: flex;
 }
+[data-theme="dark"] .main {
+  background: white;
+  color: black;
+}
 .sidebarfirst {
   width: 80px;
   background: white;
   order: 1;
   padding: 0.5rem;
+}
+[data-theme="dark"] .sidebarfirst {
+  background: black;
 }
 .sidebarsecond {
   flex: 1;
@@ -32,6 +46,11 @@
   padding: 0.2rem 0.2rem;
   display: flex;
 }
+[data-theme="dark"] .sidebarsecond {
+  border-left: 1px solid black;
+  background: white;
+  color: black;
+}
 
 .channel {
   background: white;
@@ -39,6 +58,11 @@
   padding: 0.3rem 0.5rem;
   margin-right: 10px;
 }
+[data-theme="dark"] .channel {
+  background: black;
+  color: white;
+}
+
 .country {
   padding: 0.3rem 0.5rem;
   align-items: flex-end;

@@ -36,6 +36,8 @@ export default createGlobalStyle`
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
   }
+ 
+
 
   p{
     font-size:16px;
@@ -62,12 +64,13 @@ export default createGlobalStyle`
  h1{
   font-size: 28px;
   line-height: 32px;
+  margin:10px;
   
 }
 h2{
   font-size: 28px;
   line-height: 32px;
-  margin: 0px;
+  margin: 10px;
 }
 
   footer {
