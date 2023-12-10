@@ -45,12 +45,12 @@ export default function HomePage() {
   if (error) return <div>Error loading mixes</div>;
   if (!mixesData || !Array.isArray(mixesData))
     return <div>Loading mixes...</div>;
-
+  const mixListData = mixesData && mixesData.slice(4);
   return (
     <>
-      <Featured />
+      <Featured mixes={mixesData && mixesData.slice(0, 4)} />
       <MixList
-        mixes={mixesData}
+        mixes={mixListData}
         onTagClick={handleTagClick}
         onPlayClick={handlePlayClick}
       />

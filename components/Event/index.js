@@ -86,7 +86,7 @@ export default function Event() {
             )}
           </div>
           <div className={styles.bio}>
-            <h1>{data.title}</h1>
+            <h1 className={styles.event__title}>{data.title}</h1>
             <p>{data.description}</p>
           </div>
           <div className={styles.tracklist}>

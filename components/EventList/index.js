@@ -22,20 +22,20 @@ export default function EventList({ events }) {
         {dataArray.map((event) => (
           <li className={styles.event} key={event.slug}>
             <div className={styles.eventContent}>
-              <div className={styles.imageContainer}>
-                <Image
-                  src={event.imageURL}
-                  alt={`Image for ${event.title}`}
-                  width={420}
-                  height={420}
-                />
-              </div>
+              <Link href={`/events/${event.slug}`}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src={event.imageURL}
+                    alt={`Image for ${event.title}`}
+                    width={420}
+                    height={420}
+                  />
+                </div>
 
-              <div className={styles.eventHeader}>
-                <Link href={`/events/${event.slug}`}>
+                <div className={styles.eventHeader}>
                   <div className={styles.eventTitle}>{event.title}</div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
           </li>
         ))}

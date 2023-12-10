@@ -12,7 +12,7 @@ export default function AboutPage() {
 
             <form className={styles.form}>
               <h3>
-                Welcome to Transmxit Radio, where scientists, authors, and
+                Welcome to Transmit Radio, where scientists, authors, and
                 climate activists collaborate with musicians and DJs to create
                 unique mixes. Our station weaves together spoken word and music,
                 producing captivating soundscapes that are part essay, part
