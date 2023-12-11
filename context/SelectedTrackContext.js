@@ -25,22 +25,30 @@
 
 // SelectedTrackContext.js or your context file
 // SelectedTrackContext.js or your context file
+// SelectedTrackContext.js
+
 import React, { createContext, useContext, useState } from "react";
 
 const SelectedTrackContext = createContext();
 
 export const SelectedTrackProvider = ({ children }) => {
   const [selectedTrack, setSelectedTrack] = useState(null);
+  const [isPlayButtonClicked, setIsPlayButtonClicked] = useState(false);
 
   const onPlayClick = (trackUrl) => {
-    // If the clicked track is the same as the currently selected track, pause it
     const isSameTrack = trackUrl === selectedTrack;
     setSelectedTrack(isSameTrack ? null : trackUrl);
+    setIsPlayButtonClicked(true);
   };
 
   return (
     <SelectedTrackContext.Provider
-      value={{ selectedTrack, setSelectedTrack, onPlayClick }}
+      value={{
+        selectedTrack,
+        setSelectedTrack,
+        onPlayClick,
+        isPlayButtonClicked,
+      }}
     >
       {children}
     </SelectedTrackContext.Provider>
