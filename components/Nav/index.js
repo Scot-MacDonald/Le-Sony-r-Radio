@@ -57,7 +57,7 @@ export default function Nav() {
         ) : null}
         <li>
           <Link href="/login" onClick={toggleMenu}>
-            LOGIN
+            {session ? "LOGGED IN" : "LOGIN"}
           </Link>
         </li>
         <div className={styles.searchBarContainer}>

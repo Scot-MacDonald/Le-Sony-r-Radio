@@ -1,6 +1,3 @@
-/* .mixContainer {
-} */
-
 .profileImage {
   margin-top: 67px;
   height: calc(100% - 67px);
@@ -19,7 +16,7 @@
   position: absolute;
 
   margin-top: 0;
-  width: 40%; /* Adjust the width according to your design */
+  width: 40%;
   padding-bottom: 200px;
   display: flex;
   flex-direction: column;

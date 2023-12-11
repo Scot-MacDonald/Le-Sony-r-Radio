@@ -22,7 +22,7 @@
   min-width: 40%;
   padding-bottom: 200px;
 }
-.event__title h1 {
+.event__title {
   font-size: 28px;
   line-height: 32px;
   margin-left: 0px !important;

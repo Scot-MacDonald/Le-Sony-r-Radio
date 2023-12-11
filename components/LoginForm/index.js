@@ -9,18 +9,33 @@ export default function LoginForm() {
   const { data: session } = useSession();
   if (session) {
     return (
-      <div className={styles.login}>
-        <p>Welcome, {session.user.name}</p>
-        <p>hi</p>
-        <button onClick={() => signOut()}>Sign Out</button>
-      </div>
+      <main className={styles.container}>
+        <div className={styles.formContainer}>
+          <div className={styles.fieldset}>
+            <form className={styles.form}>
+              <h2>Welcome, {session.user.name}</h2>
+            </form>
+            <button className={styles.button} onClick={() => signOut()}>
+              Log Out
+            </button>
+          </div>
+        </div>
+      </main>
     );
   } else {
     return (
-      <div className={styles.login}>
-        <p>you are not signed in</p>
-        <button onClick={() => signIn("google")}>Sign in</button>
-      </div>
+      <main className={styles.container}>
+        <div className={styles.formContainer}>
+          <div className={styles.fieldset}>
+            <form className={styles.form}>
+              <h2>You are not logged in!</h2>
+            </form>
+            <button className={styles.button} onClick={() => signIn("google")}>
+              Log in
+            </button>
+          </div>
+        </div>
+      </main>
     );
   }
 }

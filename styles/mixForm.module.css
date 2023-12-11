@@ -25,7 +25,6 @@ input.form {
   width: 100%;
   border-bottom: 1px solid #4c4c4c;
   background-color: black;
-  /* background: transparent url("/assets/search.svg") no-repeat 13px; */
 }
 
 .form {
@@ -61,8 +60,6 @@ input.form {
   border-bottom: 1px solid white;
   background-color: black;
 }
-
-/* background: transparent url("/assets/search.svg") no-repeat 13px; */
 
 .button {
   background: #4c4c4c;

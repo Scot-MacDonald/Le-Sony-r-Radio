@@ -15,6 +15,7 @@ export default async function handler(req, res) {
       $or: [
         { title: { $regex: query, $options: "i" } },
         { city: { $regex: query, $options: "i" } },
+        { type: { $regex: query, $options: "i" } },
         { tags: { $in: [query] } }, // Search by tag
       ],
     });
@@ -23,7 +24,8 @@ export default async function handler(req, res) {
       $or: [
         { title: { $regex: query, $options: "i" } },
         { city: { $regex: query, $options: "i" } },
-        { tags: { $in: [query] } }, // Search by tag
+        { type: { $regex: query, $options: "i" } },
+        { tags: { $in: [query] } },
       ],
     });
 

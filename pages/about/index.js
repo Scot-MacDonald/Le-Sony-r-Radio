@@ -1,8 +1,11 @@
 import styles from "@/styles/about.module.css";
+import Waves from "@/components/Waves";
 
 export default function AboutPage() {
   return (
     <>
+      <Waves />
+
       <main className={styles.container}>
         <div className={styles.formContainer}>
           <fieldset className={styles.fieldset}>
