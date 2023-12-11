@@ -2,13 +2,13 @@
 import dbConnect from "@/db/connect";
 import Mix from "@/db/models/Mix";
 
+// pages/api/mixes/index.js
+
 export default async function handler(request, response) {
   await dbConnect();
 
   if (request.method === "GET") {
     const { tags, search } = request.query;
-    console.log("Received tags:", tags);
-    console.log("Received search query:", search);
 
     const tagQuery = tags
       ? { tags: { $in: Array.isArray(tags) ? tags : [tags] } }
@@ -24,10 +24,9 @@ export default async function handler(request, response) {
       : {};
 
     const query = { ...tagQuery, ...searchQuery };
-    console.log("Constructed query:", query);
 
-    const mixes = await Mix.find(query);
-    console.log("Resulting mixes:", mixes);
+    // Sort by date in descending order
+    const mixes = await Mix.find(query).sort({ date: -1 });
 
     return response.status(200).json(mixes);
   }

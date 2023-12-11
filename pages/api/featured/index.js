@@ -1,4 +1,4 @@
-// pages/api/mixes/featured.js
+// pages/api/featured/featured.js
 import dbConnect from "@/db/connect";
 import Mix from "@/db/models/Mix";
 
