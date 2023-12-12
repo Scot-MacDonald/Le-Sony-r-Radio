@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import MixForm from "../components/MixForm";
 import MixList from "../components/MixList";
-import Slider from "@/components/slider";
 import Demo from "@/components/Demo";
 import { useSelectedTrack } from "@/context/SelectedTrackContext";
 import ThemeSwitch from "@/components/ThemeSwitch";

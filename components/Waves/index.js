@@ -17,16 +17,22 @@ const Waves = () => {
           wavesWidth: "80%",
           waves: [
             {
-              timeModifier: 9,
-              lineWidth: 1,
+              timeModifier: 4,
+              lineWidth: 2,
               amplitude: -100,
-              wavelength: 25,
+              wavelength: 1,
             },
             {
               timeModifier: 4,
               lineWidth: 1,
-              amplitude: 100,
-              wavelength: 20,
+              amplitude: 250,
+              wavelength: 3,
+            },
+            {
+              timeModifier: 16,
+              lineWidth: 1,
+              amplitude: 350,
+              wavelength: 6,
             },
           ],
           resizeEvent: function () {

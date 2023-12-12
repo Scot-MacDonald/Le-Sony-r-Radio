@@ -1,15 +1,18 @@
 /* featured.module.css */
+
 .featured {
   display: flex;
   width: 100%;
+  flex-wrap: wrap; /* Allow the columns to wrap to the next line */
 }
 
 .leftColumn {
   color: white;
   border-right: 1px solid white;
   width: 50%;
-  width: calc(50% + 51px);
+  box-sizing: border-box; /* Include border in the width calculation */
 }
+
 [data-theme="dark"] .leftColumn {
   border-right: 1px solid black;
 }
@@ -18,20 +21,21 @@
   padding: 40px 0;
   border-bottom: 1px solid white;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 [data-theme="dark"] .row {
   padding: 40px 0;
   border-bottom: 1px solid black;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .row:hover {
   background-color: white;
   color: black;
 }
+
 [data-theme="dark"] .row:hover {
   background-color: black;
   color: white;
@@ -39,11 +43,13 @@
 
 .rightColumn {
   position: relative;
-  width: calc(50% - 41px);
+  width: 50%; /* Initially set to 50% */
   max-height: 100%;
   overflow: hidden;
   border-bottom: white solid 1px;
+  box-sizing: border-box; /* Include border in the width calculation */
 }
+
 [data-theme="dark"] .rightColumn {
   border-bottom: black solid 1px;
 }
@@ -66,4 +72,24 @@
 .p {
   font-size: 16px;
   margin-left: 10px;
+}
+
+@media (max-width: 1024px) {
+  .featured {
+    flex-direction: column; /* Stack columns vertically on small screens */
+  }
+
+  .leftColumn,
+  .rightColumn {
+    width: 100%; /* Set both columns to 100% width at or below 1024px */
+    border-right: transparent; /* Remove the right border when columns stack */
+    /* Add bottom border to each row */
+  }
+
+  [data-theme="dark"] .rightColumn {
+    border-bottom: 1px solid black; /* Adjust border color for dark theme */
+  }
+  .featured_rightColumn__OB4pQ {
+    border-bottom: transparent;
+  }
 }

@@ -6,6 +6,8 @@
   width: 100%;
   max-width: 600px;
   padding: 32px;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .form {
@@ -41,4 +43,8 @@
   margin-bottom: 10px;
   padding-bottom: 5px;
   padding-top: 15px;
+}
+.canvas {
+  top: 10px;
+  position: absolute;
 }

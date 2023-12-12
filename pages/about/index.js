@@ -4,8 +4,9 @@ import Waves from "@/components/Waves";
 export default function AboutPage() {
   return (
     <>
-      <Waves />
-
+      <div className={styles.canvas}>
+        <Waves />
+      </div>
       <main className={styles.container}>
         <div className={styles.formContainer}>
           <fieldset className={styles.fieldset}>
