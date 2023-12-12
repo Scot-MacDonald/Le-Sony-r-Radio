@@ -24,24 +24,26 @@ const Results = () => {
 
   return (
     <>
-      <h1>RESULTS</h1>
-      <ul className={styles.featured}>
-        {results.map((result) => (
-          <li className={styles.row} key={result._id}>
-            {result.type === "event" ? (
-              <Link href={`/events/${result.slug}`}>
-                <p>{result.type}</p>
-                <h2>{result.title}</h2>
-              </Link>
-            ) : (
-              <Link href={`/${result.slug}`}>
-                <p>{result.type}</p>
-                <h2>{result.title}</h2>
-              </Link>
-            )}
-          </li>
-        ))}
-      </ul>
+      <section className={styles.explore}>
+        <h1>RESULTS</h1>
+        <ul className={styles.featured}>
+          {results.map((result) => (
+            <li className={styles.row} key={result._id}>
+              {result.type === "event" ? (
+                <Link href={`/events/${result.slug}`}>
+                  <p>{result.type}</p>
+                  <h2>{result.title}</h2>
+                </Link>
+              ) : (
+                <Link href={`/${result.slug}`}>
+                  <p>{result.type}</p>
+                  <h2>{result.title}</h2>
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
 };

@@ -8,7 +8,7 @@
   color: white;
   border-right: 1px solid white;
   width: 50%;
-  width: calc(50% + 41px);
+  width: calc(50% + 51px);
 }
 [data-theme="dark"] .leftColumn {
   border-right: 1px solid black;

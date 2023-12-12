@@ -1,5 +1,5 @@
 import useSWR from "swr";
-
+import styles from "@/styles/explore.module.css";
 import EventList from "@/components/EventList";
 
 export default function EventPage() {
@@ -25,7 +25,9 @@ export default function EventPage() {
 
   return (
     <>
-      <EventList events={eventsData} />
+      <section className={styles.explore}>
+        <EventList events={eventsData} />
+      </section>
     </>
   );
 }

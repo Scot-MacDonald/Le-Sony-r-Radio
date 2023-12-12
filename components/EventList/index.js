@@ -17,7 +17,7 @@ export default function EventList({ events }) {
 
   return (
     <>
-      <h1 className={styles.header}>EVENTS</h1>
+      <h1>EVENTS</h1>
       <ul className={styles.events}>
         {dataArray.map((event) => (
           <li className={styles.event} key={event.slug}>
