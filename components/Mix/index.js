@@ -151,7 +151,7 @@ export default function Mix() {
           <div className={styles.bio}>
             <div className={styles.border}>
               <p>{data.description}</p>
-              {renderTags(data.tags)}
+              {/* {renderTags(data.tags)} */}
             </div>
           </div>
 
