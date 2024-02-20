@@ -15,10 +15,8 @@ const mixSchema = new Schema({
 });
 
 mixSchema.pre("save", function (next) {
-  // Generate the slug from the title
   this.slug = slugify(this.title, { lower: true });
 
-  // Continue with the save operation
   next();
 });
 

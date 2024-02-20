@@ -24,7 +24,6 @@ const Featured = () => {
       }
     };
 
-    // Function to fetch all featured mixes
     const fetchFeaturedMixes = async () => {
       try {
         const response = await fetch("/api/featured");
@@ -39,19 +38,17 @@ const Featured = () => {
       }
     };
 
-    // Fetch the latest mix and featured mixes when the component mounts
     fetchLatestMix();
     fetchFeaturedMixes();
-  }, []); // Empty dependency array to run the effect only once when the component mounts
+  }, []);
 
   const handleMixHover = (mix) => {
     setHoveredMix(mix);
   };
 
-  // Function to format the date (remove time)
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString("en-US"); // Adjust the locale as needed
+    return date.toLocaleDateString("en-US");
   };
 
   return (

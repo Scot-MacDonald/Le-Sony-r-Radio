@@ -27,17 +27,14 @@ export default function HomePage() {
   }
 
   const handleTagClick = (tag) => {
-    // Handle the tag click logic here
     console.log(`Tag clicked on Home page: ${tag}`);
 
-    // Update the URL to the explore page with the selected tag
     router.push(`/explore?tags=${tag}`, undefined, { shallow: true });
   };
 
   const handlePlayClick = (trackUrl) => {
     const isSameTrack = trackUrl === selectedTrack;
 
-    // If the clicked track is the same as the currently selected track, pause it
     setSelectedTrack(isSameTrack ? null : trackUrl);
   };
 

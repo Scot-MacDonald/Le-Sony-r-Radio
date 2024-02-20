@@ -29,11 +29,9 @@ export default function AddEventPage() {
     }
   }
 
-  // If user is not logged in, redirect to the home page
   if (!session) {
-    // You can also display a message or additional content if needed
     router.push("/");
-    return null; // This can be any content you want to display when redirecting
+    return null;
   }
 
   return (

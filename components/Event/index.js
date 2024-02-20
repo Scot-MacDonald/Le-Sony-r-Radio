@@ -15,7 +15,7 @@ export default function Event() {
   const { slug } = router.query;
   const { data, isLoading, mutate } = useSWR(`/api/events/${slug}`);
   const { data: session } = useSession();
-  console.log("Session:", session); // Use useSession hook to get the session information
+  console.log("Session:", session);
 
   async function handleEdit(formData) {
     const response = await fetch(`/api/events/${slug}`, {
@@ -61,7 +61,7 @@ export default function Event() {
         />
         <section className={styles.eventProfile}>
           <div>
-            {session && ( // Display buttons only if the user is signed in
+            {session && (
               <div>
                 <button
                   className={styles.bt}

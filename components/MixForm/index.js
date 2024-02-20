@@ -3,7 +3,7 @@ import styles from "@/styles/mixForm.module.css";
 import React, { useState, useEffect, useMemo } from "react";
 
 export default function MixForm({ value, onSubmit, isEditMode }) {
-  const [successMessage, setSuccessMessage] = useState(""); // New state for success message
+  const [successMessage, setSuccessMessage] = useState("");
   const initialTags = useMemo(() => {
     return value && value.tags
       ? Array.isArray(value.tags)
@@ -41,7 +41,6 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
   const handleTagsChange = (e) => {
     const newTags = e.target.value.split(",").map((tag) => tag.trim());
 
-    // Remove duplicates by converting the array to a Set and back to an array
     const uniqueTags = [...new Set(newTags)];
 
     setTags(uniqueTags);
@@ -52,7 +51,6 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
   };
 
   const formatDate = (dateString) => {
-    // Implement your date formatting logic here if needed
     return dateString;
   };
 
@@ -66,16 +64,14 @@ export default function MixForm({ value, onSubmit, isEditMode }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Send tags as an array in the formData object
     const formData = {
       ...formValues,
       tags: tags,
     };
 
     try {
-      // Call the onSubmit function with the form data
       await onSubmit(formData);
-      setSuccessMessage("Form submitted successfully!"); // Set success message
+      setSuccessMessage("Form submitted successfully!");
     } catch (error) {
       console.error("Error submitting form:", error);
     }

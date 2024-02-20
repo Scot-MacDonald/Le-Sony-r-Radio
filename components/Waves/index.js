@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import dynamic from "next/dynamic"; // Use dynamic import for SineWaves
+import dynamic from "next/dynamic";
 
 const Waves = () => {
   const wavesRef = useRef(null);
 
   useEffect(() => {
-    // Check if the code is running on the client side
     if (typeof window !== "undefined") {
       import("sine-waves").then(({ default: SineWaves }) => {
         const waves = new SineWaves({
@@ -45,20 +44,18 @@ const Waves = () => {
               this.waves[index].strokeStyle = gradient;
             }
 
-            // Clean Up
             index = void 0;
             length = void 0;
             gradient = void 0;
           },
         });
 
-        // Clean up SineWaves on component unmount
         return () => {
           waves.destroy();
         };
       });
     }
-  }, []); // Empty dependency array ensures the effect runs only once on mount
+  }, []);
 
   return <canvas ref={wavesRef} />;
 };
