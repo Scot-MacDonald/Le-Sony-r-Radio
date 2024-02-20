@@ -1,4 +1,4 @@
-import styles from "@/styles/liveHeader.module.css";
+import styles from "@/styles/LiveHeader.module.css";
 
 export default function LiveHeader() {
   return (
