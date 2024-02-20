@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import useSWR from "swr";
-import MixList from "@/components/MixList"; // Update the path based on your project structure
+// import { useRouter } from "next/router";
+// import useSWR from "swr";
+// import MixList from "@/components/MixList"; // Update the path based on your project structure
 
 export default function ExploreTags() {
   return (

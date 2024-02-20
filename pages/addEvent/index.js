@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+import useRouter from "next/router";
 import EventForm from "@/components/EventForm";
 import styles from "@/styles/addMix.module.css";
 
