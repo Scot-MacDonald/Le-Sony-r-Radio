@@ -93,16 +93,16 @@ h2{
   //   width: auto;
   //   border: 1px solid white;}
 
-  //   .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
-  //     border-left:white solid 1px!important;
-  //     border-right:white solid 1px!important;
-  //     border-bottom:white solid 1px!important;
-  //     border-radius:0!important;
-  //     padding:0!important;
-  //     min-width:26px!important;
-  //     max-width:30px!important;
-  //     max-height:30px!important;
-  //   }
+    .css-1ujsas3{
+      border-left:white solid 1px!important;
+      border-right:white solid 1px!important;
+      border-bottom:white solid 1px!important;
+      border-radius:0!important;
+      padding:0!important;
+      min-width:26px!important;
+      max-width:30px!important;
+      max-height:30px!important;
+    }
   //   .css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover{
   //     background-color:black;
   //   }
