@@ -55,9 +55,8 @@ const Featured = () => {
     <div className={styles.featured}>
       <div className={styles.leftColumn}>
         {featuredMixes.map((mix) => (
-          <Link href={`/${mix.slug}`}>
+          <Link key={mix._id} href={`/${mix.slug}`}>
             <div
-              key={mix._id}
               className={styles.row}
               onMouseEnter={() => handleMixHover(mix)}
             >
