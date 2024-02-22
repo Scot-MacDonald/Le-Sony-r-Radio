@@ -1,5 +1,5 @@
 import { SWRConfig } from "swr";
-import GlobalStyle from "../styles";
+import GlobalStyle from "@/styles";
 import RootLayout from "@/components/Layout";
 import { SelectedTrackProvider } from "@/context/SelectedTrackContext";
 import { SessionProvider } from "next-auth/react";
