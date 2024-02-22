@@ -7,8 +7,8 @@
 .liveChannel {
   width: 50%;
 }
-.liveChannel__header {
-}
+/* .liveChannel__header {
+} */
 
 .liveChannel__footer {
   font-size: 14px;
@@ -54,5 +54,5 @@
 }
 
 .drawerArrow {
-  background-color: black;
+  background-color: black !important;
 }
