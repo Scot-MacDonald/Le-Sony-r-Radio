@@ -83,11 +83,11 @@ h2{
   //   background-color: black;
   // }
 
-  // .css-1nvnyqx-MuiPaper-root-MuiDrawer-paper{
-  //   background-color:black!important;
-  //   margin-top:81px;
-  //   z-index:1400!important;
-  // }
+  .css-oqbj7d{
+    background-color:black!important;
+    margin-top:81px;
+    z-index:1400!important;
+  }
 
   // .css-68zbsl {
   //   width: auto;
@@ -107,14 +107,14 @@ h2{
   //     background-color:black;
   //   }
   
-  //   .dark{
-  //     min-width:26px;
-  //     max-width:30px;
-  //     max-height:30px;
-  //     border-right:white solid 1px;
-  //     border-bottom:white solid 1px;
-  //     background-color:transparent;
-  //   }
+    .dark{
+      min-width:26px;
+      max-width:30px;
+      max-height:30px;
+      border-right:white solid 1px;
+      border-bottom:white solid 1px;
+      background-color:transparent;
+    }
 
     
     
