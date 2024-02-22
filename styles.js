@@ -79,42 +79,42 @@ h2{
     width: 100%;
   }
 
-  .g-background-default {
-    background-color: black;
-  }
+  // .g-background-default {
+  //   background-color: black;
+  // }
 
-  .css-1nvnyqx-MuiPaper-root-MuiDrawer-paper{
-    background-color:black!important;
-    margin-top:81px;
-    z-index:1400!important;
-  }
+  // .css-1nvnyqx-MuiPaper-root-MuiDrawer-paper{
+  //   background-color:black!important;
+  //   margin-top:81px;
+  //   z-index:1400!important;
+  // }
 
-  .css-68zbsl {
-    width: auto;
-    border: 1px solid white;}
+  // .css-68zbsl {
+  //   width: auto;
+  //   border: 1px solid white;}
 
-    .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
-      border-left:white solid 1px!important;
-      border-right:white solid 1px!important;
-      border-bottom:white solid 1px!important;
-      border-radius:0!important;
-      padding:0!important;
-      min-width:26px!important;
-      max-width:30px!important;
-      max-height:30px!important;
-    }
-    .css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover{
-      background-color:black;
-    }
+  //   .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
+  //     border-left:white solid 1px!important;
+  //     border-right:white solid 1px!important;
+  //     border-bottom:white solid 1px!important;
+  //     border-radius:0!important;
+  //     padding:0!important;
+  //     min-width:26px!important;
+  //     max-width:30px!important;
+  //     max-height:30px!important;
+  //   }
+  //   .css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover{
+  //     background-color:black;
+  //   }
   
-    .dark{
-      min-width:26px;
-      max-width:30px;
-      max-height:30px;
-      border-right:white solid 1px;
-      border-bottom:white solid 1px;
-      background-color:transparent;
-    }
+  //   .dark{
+  //     min-width:26px;
+  //     max-width:30px;
+  //     max-height:30px;
+  //     border-right:white solid 1px;
+  //     border-bottom:white solid 1px;
+  //     background-color:transparent;
+  //   }
 
     
     

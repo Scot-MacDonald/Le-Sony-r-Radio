@@ -101,13 +101,12 @@
   }
 }
 
-.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
-  border-left: white solid 1px;
-  border-right: white solid 1px;
-  border-bottom: white solid 1px;
-  border-radius: 0;
-  padding: 0;
-  min-width: 26px;
-  max-width: 30px;
-  max-height: 30px;
+.g-background-default {
+  background-color: black;
+}
+
+.css-1nvnyqx-MuiPaper-root-MuiDrawer-paper {
+  background-color: black !important;
+  margin-top: 81px;
+  z-index: 1400 !important;
 }
