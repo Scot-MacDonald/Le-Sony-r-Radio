@@ -72,8 +72,7 @@ export default function TemporaryDrawer() {
             <div className={styles.liveChannel__content}>
               <div className={styles.liveChannel__content__image}>
                 <Image
-                  src=" 
-                    https://media2.ntslive.co.uk/resize/1600x1600/1432046c-1f55-49ef-80ff-0bf8a9367501_1684281600.jpeg"
+                  src="https://media2.ntslive.co.uk/resize/1600x1600/1432046c-1f55-49ef-80ff-0bf8a9367501_1684281600.jpeg"
                   alt="GFG logo served with static path of public directory"
                   width={500}
                   height={280}
